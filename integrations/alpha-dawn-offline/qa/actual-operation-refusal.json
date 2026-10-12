@@ -1,0 +1,44 @@
+{
+  "performed_at": "2026-10-12T20:22:04.636569Z",
+  "checks": [
+    {
+      "operation": "send",
+      "exit_code": 2,
+      "response": {
+        "status": "rejected",
+        "code": "OPERATION_NOT_ALLOWED",
+        "detail": "OPERATION_NOT_ALLOWED: only validate and compute are implemented; send/trade are refused"
+      }
+    },
+    {
+      "operation": "trade",
+      "exit_code": 2,
+      "response": {
+        "status": "rejected",
+        "code": "OPERATION_NOT_ALLOWED",
+        "detail": "OPERATION_NOT_ALLOWED: only validate and compute are implemented; send/trade are refused"
+      }
+    },
+    {
+      "operation": "botmux",
+      "exit_code": 2,
+      "response": {
+        "status": "rejected",
+        "code": "OPERATION_NOT_ALLOWED",
+        "detail": "OPERATION_NOT_ALLOWED: only validate and compute are implemented; send/trade are refused"
+      }
+    },
+    {
+      "operation": "schedule",
+      "exit_code": 2,
+      "response": {
+        "status": "rejected",
+        "code": "OPERATION_NOT_ALLOWED",
+        "detail": "OPERATION_NOT_ALLOWED: only validate and compute are implemented; send/trade are refused"
+      }
+    }
+  ],
+  "scope": "Actual adapter CLI calls; rejected before processing. No send/trade implementation exists.",
+  "process_function_network_and_child_process_calls": 0,
+  "counter_evidence": "test_actual_send_and_trade_calls_rejected_without_side_effects"
+}

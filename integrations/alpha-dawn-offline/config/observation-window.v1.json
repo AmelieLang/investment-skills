@@ -1,0 +1,18 @@
+{
+  "version": "quality-window/1.0.0",
+  "default": "latest three disclosed full fiscal years plus latest interim",
+  "annual_period_count": 3,
+  "full_fiscal_year_days": [
+    360,
+    371
+  ],
+  "case_override": "explicit reason and dates frozen no later than evaluation; weights and anchors unchanged",
+  "evidence": "calendar basis plus exact period evidence; a one-day receipt cannot represent multi-year coverage",
+  "window_requirements": {
+    "economics": "Q03",
+    "moat": "Q06",
+    "capital": "Q09",
+    "resilience": "Q11",
+    "governance": "Q15"
+  }
+}

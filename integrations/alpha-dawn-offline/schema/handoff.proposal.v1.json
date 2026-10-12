@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:alpha-dawn:handoff:proposal-v1",
+  "description": "Proposed typed evidence/result envelope only. No transport or live access isolation is implemented.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract_version", "message_type", "bot_id", "peer_bot_id", "request_id", "case_id", "cutoff_at", "payload_kind", "payload_sha256", "sources", "input_allowlist_ids", "workspace_namespace", "state_namespace", "shared_mutable_state", "executable_payload"],
+  "properties": {
+    "contract_version": {"const": "alpha-dawn-handoff/proposal-v1"},
+    "message_type": {"enum": ["analysis_input", "analysis_receipt"]},
+    "bot_id": {"const": "alpha-dawn-framework"},
+    "peer_bot_id": {"type": ["string", "null"]},
+    "request_id": {"type": "string", "minLength": 1},
+    "case_id": {"type": "string", "minLength": 1},
+    "cutoff_at": {"type": "string", "format": "date-time"},
+    "payload_kind": {"enum": ["frozen_facts_json", "quoted_text", "offline_analysis_json"]},
+    "payload_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "sources": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["source_id", "visibility", "media_type", "sha256", "entity_id", "period", "published_at"], "properties": {
+      "source_id": {"type": "string", "minLength": 1},
+      "visibility": {"enum": ["public", "synthetic"]},
+      "media_type": {"enum": ["application/json", "text/plain"]},
+      "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+      "entity_id": {"type": "string", "minLength": 1},
+      "period": {"type": "string", "minLength": 1},
+      "published_at": {"type": "string", "format": "date-time"}
+    }}},
+    "input_allowlist_ids": {"type": "array", "items": {"type": "string"}},
+    "workspace_namespace": {"const": "alpha-dawn-framework"},
+    "state_namespace": {"const": "alpha-dawn-framework"},
+    "shared_mutable_state": {"const": false},
+    "executable_payload": {"const": false}
+  }
+}

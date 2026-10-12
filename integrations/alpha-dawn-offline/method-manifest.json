@@ -1,0 +1,98 @@
+{
+  "repository": "https://github.com/finterm-ai/investment-skills",
+  "commit": "7235d3411601036cc79137fa0aec0d587f2c8e19",
+  "framework_path": "skills/buffett-investment-framework/",
+  "license": {
+    "spdx": "MIT",
+    "copyright": "Copyright (c) 2026 finterm.ai",
+    "status": "verified",
+    "verified_date": "2026-10-12"
+  },
+  "files": [
+    {
+      "path": "LICENSE",
+      "git_blob_sha": "2db886705cbe711a6478cc559312b1969760c7df",
+      "sha256": "83a2c370b7a30045643a5c3236b27aa4ea6c0f3dee54672297be9320fa4a7cc3",
+      "bytes": 1067
+    },
+    {
+      "path": "skills/buffett-investment-framework/SKILL.md",
+      "git_blob_sha": "55f64f183a54e481b206a347ef06db2f228ca9ce",
+      "sha256": "4e68fa9add83b8a688dc185e12ae0619d93214e28905a3676ddc2823f49cf4bf",
+      "bytes": 11468
+    },
+    {
+      "path": "skills/buffett-investment-framework/agents/openai.yaml",
+      "git_blob_sha": "53b1b1c40c40b535d0e026a0a2e8aef2b431be6a",
+      "sha256": "361925fff549a33278fd44988f46da2999c3b35e432926ff711143c74c73f239",
+      "bytes": 213
+    },
+    {
+      "path": "skills/buffett-investment-framework/references/00-source-key.md",
+      "git_blob_sha": "aa23d20c5921922cc4bf214c34485f1d04f0a396",
+      "sha256": "fd0c4fd472b6c8b4b04dd7f28a100aa33fd3e971ce4de89cf4106a71e6d5b9b8",
+      "bytes": 6592
+    },
+    {
+      "path": "skills/buffett-investment-framework/references/01-decision-posture.md",
+      "git_blob_sha": "2e4463aa17a10188f0e1a320e0b0ac024d246f35",
+      "sha256": "2b61a70670c826c4e1d952ea55bb53eeb39ed39d95179164d2ea8f6aa56edb3d",
+      "bytes": 13224
+    },
+    {
+      "path": "skills/buffett-investment-framework/references/02-business-economics.md",
+      "git_blob_sha": "5402c9343892b57dc2ee956cf2ac0ec89987410b",
+      "sha256": "839e3d8a80441f13a0f33eb4e19d8b175f97effa3c80a9abac0405ee8eb94afc",
+      "bytes": 10227
+    },
+    {
+      "path": "skills/buffett-investment-framework/references/03-management-governance.md",
+      "git_blob_sha": "b74757b5a1bf461c24a1ad3697469a8450835da6",
+      "sha256": "adf715871f20c41f811bf03d81c38368f00bbed068262f57c90ec9d309e6a322",
+      "bytes": 11699
+    },
+    {
+      "path": "skills/buffett-investment-framework/references/04-financial-reality.md",
+      "git_blob_sha": "3d30aecbe3e40404646ed70d699476cda9cb0fd2",
+      "sha256": "4a9f62a3c91f16f23c812411a849d3180e0361a1b69755ce84d9f60619e2e767",
+      "bytes": 10295
+    },
+    {
+      "path": "skills/buffett-investment-framework/references/05-valuation.md",
+      "git_blob_sha": "ac51ea8840f634739a2a0f0c07d071d1218f9b93",
+      "sha256": "03a9395e0c4563d96d865638e953894a842f0475495c0f7e0e4d7d2428f1abca",
+      "bytes": 8844
+    },
+    {
+      "path": "skills/buffett-investment-framework/references/06-capital-allocation.md",
+      "git_blob_sha": "33b8d508158e2a87043300768f176fd7ee8b341b",
+      "sha256": "15f712f413c8db01dca0f2c92988732899acaf4b4229fcabd38da5e5a4b1960d",
+      "bytes": 13240
+    },
+    {
+      "path": "skills/buffett-investment-framework/references/07-risk-monitoring.md",
+      "git_blob_sha": "8e8ea5753638d2c23776d4e52582691f29ce18a4",
+      "sha256": "d5a61603a98bf09a99f16e8545da69474a685f963c693511f01e5fc7297ecad1",
+      "bytes": 10170
+    },
+    {
+      "path": "skills/buffett-investment-framework/references/08-specialized-overlays.md",
+      "git_blob_sha": "c57dc1612ffc2e6e21adc578c837887f4f9c5f2a",
+      "sha256": "fde84b1f8539a19daf47368477ce9b1b35df9d0efc9de533e94715244c50f3c9",
+      "bytes": 17507
+    },
+    {
+      "path": "skills/buffett-investment-framework/scripts/framework.py",
+      "git_blob_sha": "f49897c9d54c9dc8b5db96fad6cb28c6c823ef02",
+      "sha256": "37c8db45c48aef8ac43f45732a0cfa632353ab69440ec0a35d9abd26d1c8f488",
+      "bytes": 18085
+    }
+  ],
+  "native_boundary": "financial-analysis is not a composite stock score, trading action or forced valuation",
+  "optional_macro": {
+    "repository": "https://github.com/AmelieLang/Macro-analysis",
+    "commit": "926d035f4afa52a0ac05c1d65579455ccd22e7ee",
+    "enabled": false,
+    "attribution": "Macro-analysis project rubric; numeric thresholds are not attributed to Dalio himself"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "performed_at": "2026-10-12T20:22:04.636569Z",
+  "status": "passed",
+  "private_marker_matches": 0,
+  "adapter_imports": [
+    "__future__",
+    "argparse",
+    "copy",
+    "datetime",
+    "hashlib",
+    "json",
+    "math",
+    "pathlib",
+    "re",
+    "sys",
+    "urllib.parse"
+  ],
+  "dynamic_execution_calls": 0,
+  "source_scope": "fixed MIT public upstream + public Apple release + synthetic fixtures + explicitly requested synthetic/public dashboard review PNGs; no private files or unrelated desktop screenshots"
+}

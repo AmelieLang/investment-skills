@@ -1,0 +1,238 @@
+{
+  "performed_at": "2026-10-12T20:22:02.784978Z",
+  "criterion": "T3-R2-01",
+  "cases": [
+    {
+      "case": "consecutive_two_year",
+      "periods": [
+        {
+          "start": "2026-10-13",
+          "end": "2027-10-12",
+          "frequency": "annual"
+        },
+        {
+          "start": "2027-10-13",
+          "end": "2028-10-12",
+          "frequency": "annual"
+        }
+      ],
+      "ev": 957041306.8652928,
+      "equity": 857041306.8652928,
+      "diagnostics": [],
+      "quality_total": 75.0,
+      "evidence_satisfied": 27
+    },
+    {
+      "case": "exact_overlap",
+      "periods": [
+        {
+          "start": "2026-10-13",
+          "end": "2027-10-12",
+          "frequency": "annual"
+        },
+        {
+          "start": "2027-01-01",
+          "end": "2027-12-31",
+          "frequency": "annual"
+        }
+      ],
+      "ev": null,
+      "equity": null,
+      "diagnostics": [
+        {
+          "stage": "ev",
+          "code": "NONCONSECUTIVE_FORECAST_PERIODS",
+          "detail": "annual forecast must start the day after 2027-10-12"
+        }
+      ],
+      "quality_total": 75.0,
+      "evidence_satisfied": 27
+    },
+    {
+      "case": "one_day_gap",
+      "periods": [
+        {
+          "start": "2026-10-13",
+          "end": "2027-10-12",
+          "frequency": "annual"
+        },
+        {
+          "start": "2027-10-14",
+          "end": "2028-10-13",
+          "frequency": "annual"
+        }
+      ],
+      "ev": null,
+      "equity": null,
+      "diagnostics": [
+        {
+          "stage": "ev",
+          "code": "NONCONSECUTIVE_FORECAST_PERIODS",
+          "detail": "annual forecast must start the day after 2027-10-12"
+        }
+      ],
+      "quality_total": 75.0,
+      "evidence_satisfied": 27
+    },
+    {
+      "case": "initial_omitted_day",
+      "periods": [
+        {
+          "start": "2026-10-14",
+          "end": "2027-10-13",
+          "frequency": "annual"
+        }
+      ],
+      "ev": null,
+      "equity": null,
+      "diagnostics": [
+        {
+          "stage": "ev",
+          "code": "NONCONSECUTIVE_FORECAST_PERIODS",
+          "detail": "annual forecast must start the day after 2026-10-12"
+        }
+      ],
+      "quality_total": 75.0,
+      "evidence_satisfied": 27
+    }
+  ],
+  "unchanged_r1_files": [
+    {
+      "path": "config/anchors.v1.json",
+      "sha256": "e1ce5d705f4bce0452c986ced8d8c50794f080b05bc5bbc03f95bc9828dc2f73"
+    },
+    {
+      "path": "config/observation-window.v1.json",
+      "sha256": "c71a3e50483387392759e6feaad51207f8a56f4395928e3c962c67fb9320e15a"
+    },
+    {
+      "path": "config/requirements.v1.json",
+      "sha256": "e0282dc19558e67c82f30e62eb0aa27575b948b4dec268bd1241bdd4bde89648"
+    },
+    {
+      "path": "dashboard.html",
+      "sha256": "16c5e990c3692596ef040d099cb4e362193fad1b38e091c0bd3876eb3dc16761"
+    },
+    {
+      "path": "examples/apple-fy2023-public-gaps.input.json",
+      "sha256": "878dcd395406e4fd80a1477364d3005c91320411588d79e56bc185e1539f9f03"
+    },
+    {
+      "path": "examples/apple-fy2023-public-gaps.result.json",
+      "sha256": "c182d5839598806f4b208eeaebf4b8dd2ddbb72967cf96167804af9ded84bc75"
+    },
+    {
+      "path": "examples/synthetic-complete.input.json",
+      "sha256": "bd3e29f0b9fc6a687b689a84e04ba28a6d93aec0a3c1dcb0a7081809ac2c36b3"
+    },
+    {
+      "path": "examples/synthetic-complete.result.json",
+      "sha256": "bc5c6cb000ebc3c319c5f046622e4e9345a3ce8f11e8af08599f5fc01e921a1e"
+    },
+    {
+      "path": "examples/synthetic-hard-risk.input.json",
+      "sha256": "0f689a196bf918ed7d9d3e10c12390703ce62a8b842d50e243e01410a5cbd736"
+    },
+    {
+      "path": "examples/synthetic-hard-risk.result.json",
+      "sha256": "f606e1da17c181e877c76d1544db854a4634796146f00017bb5563a1f60ee2a7"
+    },
+    {
+      "path": "qa/dashboard-tests.json",
+      "sha256": "6d86d6f89f88d264198022df96e7cf8fa2e6551ed3eca405de82d91f10cdc936"
+    },
+    {
+      "path": "qa/visual/complete.png",
+      "sha256": "ca38dcfe5c20a8859dc80ce41a12e8934ca5aa5c2681545f45d8456c8c9f350b"
+    },
+    {
+      "path": "qa/visual/hard-risk.png",
+      "sha256": "bdb36d9c035be9da4c15dc5455546cbcffe823e1cc0cb51019ac4085beab977e"
+    },
+    {
+      "path": "qa/visual/public-gaps.png",
+      "sha256": "0507375f046fc382e2ba2537badad1276c48ecb87d35709a9c01c028ad8dd6db"
+    },
+    {
+      "path": "qa/visual-qa.json",
+      "sha256": "9386a127dda35254e6764faa91b772b59cfbd80fe520f97a55dfc7c85be9cfa6"
+    },
+    {
+      "path": "schema/handoff.proposal.v1.json",
+      "sha256": "7b1fd803808a52794d5ad1581db02bbae98732d1adaa8285e7b0bc0c56ee96e9"
+    },
+    {
+      "path": "schema/request.v1.json",
+      "sha256": "ea2576167e6e94733e1f797e26bd504d28acfc0e5ff05161f6e2e6d3a68e2891"
+    },
+    {
+      "path": "schema/result.v1.json",
+      "sha256": "fc8bb7b49786f9e4a1221f26062bcd0999395eee7705f47dcf75b85835018cc8"
+    },
+    {
+      "path": "ui/dashboard.css",
+      "sha256": "4c86e4492602e46852cbe52612db8f4c9ce062b6fa16b561b1888d2a8b33792e"
+    },
+    {
+      "path": "ui/dashboard.js",
+      "sha256": "aa290a4fb7a1ad83b2c68dd9d4ff1111af57f07a5fd2c16fba2eb809de79667a"
+    },
+    {
+      "path": "vendor/finterm/LICENSE",
+      "sha256": "83a2c370b7a30045643a5c3236b27aa4ea6c0f3dee54672297be9320fa4a7cc3"
+    },
+    {
+      "path": "vendor/finterm/skills/buffett-investment-framework/agents/openai.yaml",
+      "sha256": "361925fff549a33278fd44988f46da2999c3b35e432926ff711143c74c73f239"
+    },
+    {
+      "path": "vendor/finterm/skills/buffett-investment-framework/references/00-source-key.md",
+      "sha256": "fd0c4fd472b6c8b4b04dd7f28a100aa33fd3e971ce4de89cf4106a71e6d5b9b8"
+    },
+    {
+      "path": "vendor/finterm/skills/buffett-investment-framework/references/01-decision-posture.md",
+      "sha256": "2b61a70670c826c4e1d952ea55bb53eeb39ed39d95179164d2ea8f6aa56edb3d"
+    },
+    {
+      "path": "vendor/finterm/skills/buffett-investment-framework/references/02-business-economics.md",
+      "sha256": "839e3d8a80441f13a0f33eb4e19d8b175f97effa3c80a9abac0405ee8eb94afc"
+    },
+    {
+      "path": "vendor/finterm/skills/buffett-investment-framework/references/03-management-governance.md",
+      "sha256": "adf715871f20c41f811bf03d81c38368f00bbed068262f57c90ec9d309e6a322"
+    },
+    {
+      "path": "vendor/finterm/skills/buffett-investment-framework/references/04-financial-reality.md",
+      "sha256": "4a9f62a3c91f16f23c812411a849d3180e0361a1b69755ce84d9f60619e2e767"
+    },
+    {
+      "path": "vendor/finterm/skills/buffett-investment-framework/references/05-valuation.md",
+      "sha256": "03a9395e0c4563d96d865638e953894a842f0475495c0f7e0e4d7d2428f1abca"
+    },
+    {
+      "path": "vendor/finterm/skills/buffett-investment-framework/references/06-capital-allocation.md",
+      "sha256": "15f712f413c8db01dca0f2c92988732899acaf4b4229fcabd38da5e5a4b1960d"
+    },
+    {
+      "path": "vendor/finterm/skills/buffett-investment-framework/references/07-risk-monitoring.md",
+      "sha256": "d5a61603a98bf09a99f16e8545da69474a685f963c693511f01e5fc7297ecad1"
+    },
+    {
+      "path": "vendor/finterm/skills/buffett-investment-framework/references/08-specialized-overlays.md",
+      "sha256": "fde84b1f8539a19daf47368477ce9b1b35df9d0efc9de533e94715244c50f3c9"
+    },
+    {
+      "path": "vendor/finterm/skills/buffett-investment-framework/scripts/framework.py",
+      "sha256": "37c8db45c48aef8ac43f45732a0cfa632353ab69440ec0a35d9abd26d1c8f488"
+    },
+    {
+      "path": "vendor/finterm/skills/buffett-investment-framework/SKILL.md",
+      "sha256": "4e68fa9add83b8a688dc185e12ae0619d93214e28905a3676ddc2823f49cf4bf"
+    }
+  ],
+  "saved_fixture_results_identical": true,
+  "frontend_security": "Reused accepted R1 21/21; frontend source, schema and dashboard bytes identical.",
+  "visual_proof": "Reused three accepted actual PNGs and original visual-qa.json; final dashboard bytes identical.",
+  "runtime_contract_version": "offline-alpha-dawn/v1.1",
+  "no_stub_or_gap_feature_added": true
+}

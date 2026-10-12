@@ -1,0 +1,503 @@
+diff --git a/adapter.py b/adapter.py
+index cac4914..dcf30f4 100644
+--- a/adapter.py
++++ b/adapter.py
+@@ -456,6 +456,7 @@ def calculate_valuation(request, facts, assumptions, eligible):
+             if not (wacc > 0 and growth > -1 and wacc > growth):
+                 raise Rejected("INVALID_RATE_DOMAIN", "WACC>0, g>-1, WACC>g")
+             pv, last_fcff, last_t = 0.0, None, 0.0
++            previous_period_end = origin
+             if not scenario["forecast"]:
+                 raise Rejected("MISSING_FORECAST", scenario["name"])
+             for year in scenario["forecast"]:
+@@ -463,6 +464,9 @@ def calculate_valuation(request, facts, assumptions, eligible):
+                 days = (date.fromisoformat(period["end"]) - date.fromisoformat(period["start"])).days + 1
+                 if period["frequency"] != "annual" or not 360 <= days <= 371 or period["end"] != year["cashflow_date"] or date.fromisoformat(period["start"]) <= origin:
+                     raise Rejected("INVALID_FORECAST_FLOW_PERIOD", "explicit future annual period ending on cashflow_date required")
++                if (date.fromisoformat(period["start"]) - previous_period_end).days != 1:
++                    raise Rejected("NONCONSECUTIVE_FORECAST_PERIODS", "annual forecast must start the day after " + previous_period_end.isoformat())
++                previous_period_end = date.fromisoformat(period["end"])
+                 for key, definition in (("ebit_ref", "operating_ebit"), ("tax_ref", "effective_cash_tax_rate"),
+                                         ("da_ref", "noncash_da"), ("capex_ref", "capital_expenditure"), ("nwc_change_ref", "change_in_operating_nwc")):
+                     forecast_item(year[key], period, definition)
+diff --git a/qa/actual-operation-refusal.json b/qa/actual-operation-refusal.json
+index dfa2625..48f3520 100644
+--- a/qa/actual-operation-refusal.json
++++ b/qa/actual-operation-refusal.json
+@@ -1,5 +1,5 @@
+ {
+-  "performed_at": "2026-10-12T20:11:04.148821Z",
++  "performed_at": "2026-10-12T20:22:04.636569Z",
+   "checks": [
+     {
+       "operation": "send",
+diff --git a/qa/backend-tests.json b/qa/backend-tests.json
+index f67cb33..ef069e5 100644
+--- a/qa/backend-tests.json
++++ b/qa/backend-tests.json
+@@ -1,12 +1,13 @@
+ {
+-  "performed_at": "2026-10-12T20:02:27.638203+00:00",
+-  "command": "python -m unittest discover -s tests -v",
+-  "evidence": "successful execution receipt: 50 tests, OK, exit 0; no reexecution during packaging",
+-  "tests_run": 50,
+-  "passed": 50,
++  "recorded_at": "2026-10-12T20:22:02.784978Z",
++  "execution": "python -m unittest discover -s tests -v",
++  "execution_exit_code": 0,
++  "execution_summary": "Ran 54 tests; OK",
++  "scope": "Actual successful full backend regression after the only runtime/test changes; includes four R2 timeline regressions and prior safety checks. Recording does not rerun the suite.",
++  "passed": 54,
+   "failed": 0,
+   "errors": 0,
+-  "checks": [
++  "records": [
+     {
+       "test": "test_adapter.AdapterTests.test_actual_send_and_trade_calls_rejected_without_side_effects",
+       "status": "passed"
+@@ -159,6 +160,22 @@
+       "test": "test_adapter.AdapterTests.test_r1_zero_value_has_no_comparison_ratios",
+       "status": "passed"
+     },
++    {
++      "test": "test_adapter.AdapterTests.test_r2_consecutive_two_year_forecast_is_valid",
++      "status": "passed"
++    },
++    {
++      "test": "test_adapter.AdapterTests.test_r2_exact_overlapping_annual_forecasts_are_rejected",
++      "status": "passed"
++    },
++    {
++      "test": "test_adapter.AdapterTests.test_r2_gap_between_annual_forecasts_is_rejected",
++      "status": "passed"
++    },
++    {
++      "test": "test_adapter.AdapterTests.test_r2_initial_omitted_interval_is_rejected",
++      "status": "passed"
++    },
+     {
+       "test": "test_adapter.AdapterTests.test_rate_and_tax_domains",
+       "status": "passed"
+@@ -211,11 +228,11 @@
+   "tested_source_hashes": [
+     {
+       "path": "adapter.py",
+-      "sha256": "97229690d1bcb1859d450863ec2a69f5fd4d8f4fa22e07a4a165b02b31ce621e"
++      "sha256": "c9575a29a36ef89f1aa7ba0752cc61f67fc864e6b16ec1317abe96f554f7aa47"
+     },
+     {
+       "path": "tests/test_adapter.py",
+-      "sha256": "a513ad4f5699b08a8ea2c0334edd70d3e3080bb09ff28296db37aefcbba2d362"
++      "sha256": "913789c579ea7d7139a9f3be0398e682f8b8db643ac799fb3b21a6442272af2c"
+     },
+     {
+       "path": "tests/dashboard_security.cjs",
+@@ -262,4 +279,4 @@
+       "sha256": "0f689a196bf918ed7d9d3e10c12390703ce62a8b842d50e243e01410a5cbd736"
+     }
+   ]
+-}
+\ No newline at end of file
++}
+diff --git a/qa/public-content-audit.json b/qa/public-content-audit.json
+index 9355a70..a3ffdf1 100644
+--- a/qa/public-content-audit.json
++++ b/qa/public-content-audit.json
+@@ -1,5 +1,5 @@
+ {
+-  "performed_at": "2026-10-12T20:11:04.148821Z",
++  "performed_at": "2026-10-12T20:22:04.636569Z",
+   "status": "passed",
+   "private_marker_matches": 0,
+   "adapter_imports": [
+diff --git a/qa/r2-period-integrity.json b/qa/r2-period-integrity.json
+new file mode 100644
+index 0000000..b628fe1
+--- /dev/null
++++ b/qa/r2-period-integrity.json
+@@ -0,0 +1,238 @@
++{
++  "performed_at": "2026-10-12T20:22:02.784978Z",
++  "criterion": "T3-R2-01",
++  "cases": [
++    {
++      "case": "consecutive_two_year",
++      "periods": [
++        {
++          "start": "2026-10-13",
++          "end": "2027-10-12",
++          "frequency": "annual"
++        },
++        {
++          "start": "2027-10-13",
++          "end": "2028-10-12",
++          "frequency": "annual"
++        }
++      ],
++      "ev": 957041306.8652928,
++      "equity": 857041306.8652928,
++      "diagnostics": [],
++      "quality_total": 75.0,
++      "evidence_satisfied": 27
++    },
++    {
++      "case": "exact_overlap",
++      "periods": [
++        {
++          "start": "2026-10-13",
++          "end": "2027-10-12",
++          "frequency": "annual"
++        },
++        {
++          "start": "2027-01-01",
++          "end": "2027-12-31",
++          "frequency": "annual"
++        }
++      ],
++      "ev": null,
++      "equity": null,
++      "diagnostics": [
++        {
++          "stage": "ev",
++          "code": "NONCONSECUTIVE_FORECAST_PERIODS",
++          "detail": "annual forecast must start the day after 2027-10-12"
++        }
++      ],
++      "quality_total": 75.0,
++      "evidence_satisfied": 27
++    },
++    {
++      "case": "one_day_gap",
++      "periods": [
++        {
++          "start": "2026-10-13",
++          "end": "2027-10-12",
++          "frequency": "annual"
++        },
++        {
++          "start": "2027-10-14",
++          "end": "2028-10-13",
++          "frequency": "annual"
++        }
++      ],
++      "ev": null,
++      "equity": null,
++      "diagnostics": [
++        {
++          "stage": "ev",
++          "code": "NONCONSECUTIVE_FORECAST_PERIODS",
++          "detail": "annual forecast must start the day after 2027-10-12"
++        }
++      ],
++      "quality_total": 75.0,
++      "evidence_satisfied": 27
++    },
++    {
++      "case": "initial_omitted_day",
++      "periods": [
++        {
++          "start": "2026-10-14",
++          "end": "2027-10-13",
++          "frequency": "annual"
++        }
++      ],
++      "ev": null,
++      "equity": null,
++      "diagnostics": [
++        {
++          "stage": "ev",
++          "code": "NONCONSECUTIVE_FORECAST_PERIODS",
++          "detail": "annual forecast must start the day after 2026-10-12"
++        }
++      ],
++      "quality_total": 75.0,
++      "evidence_satisfied": 27
++    }
++  ],
++  "unchanged_r1_files": [
++    {
++      "path": "config/anchors.v1.json",
++      "sha256": "e1ce5d705f4bce0452c986ced8d8c50794f080b05bc5bbc03f95bc9828dc2f73"
++    },
++    {
++      "path": "config/observation-window.v1.json",
++      "sha256": "c71a3e50483387392759e6feaad51207f8a56f4395928e3c962c67fb9320e15a"
++    },
++    {
++      "path": "config/requirements.v1.json",
++      "sha256": "e0282dc19558e67c82f30e62eb0aa27575b948b4dec268bd1241bdd4bde89648"
++    },
++    {
++      "path": "dashboard.html",
++      "sha256": "16c5e990c3692596ef040d099cb4e362193fad1b38e091c0bd3876eb3dc16761"
++    },
++    {
++      "path": "examples/apple-fy2023-public-gaps.input.json",
++      "sha256": "878dcd395406e4fd80a1477364d3005c91320411588d79e56bc185e1539f9f03"
++    },
++    {
++      "path": "examples/apple-fy2023-public-gaps.result.json",
++      "sha256": "c182d5839598806f4b208eeaebf4b8dd2ddbb72967cf96167804af9ded84bc75"
++    },
++    {
++      "path": "examples/synthetic-complete.input.json",
++      "sha256": "bd3e29f0b9fc6a687b689a84e04ba28a6d93aec0a3c1dcb0a7081809ac2c36b3"
++    },
++    {
++      "path": "examples/synthetic-complete.result.json",
++      "sha256": "bc5c6cb000ebc3c319c5f046622e4e9345a3ce8f11e8af08599f5fc01e921a1e"
++    },
++    {
++      "path": "examples/synthetic-hard-risk.input.json",
++      "sha256": "0f689a196bf918ed7d9d3e10c12390703ce62a8b842d50e243e01410a5cbd736"
++    },
++    {
++      "path": "examples/synthetic-hard-risk.result.json",
++      "sha256": "f606e1da17c181e877c76d1544db854a4634796146f00017bb5563a1f60ee2a7"
++    },
++    {
++      "path": "qa/dashboard-tests.json",
++      "sha256": "6d86d6f89f88d264198022df96e7cf8fa2e6551ed3eca405de82d91f10cdc936"
++    },
++    {
++      "path": "qa/visual/complete.png",
++      "sha256": "ca38dcfe5c20a8859dc80ce41a12e8934ca5aa5c2681545f45d8456c8c9f350b"
++    },
++    {
++      "path": "qa/visual/hard-risk.png",
++      "sha256": "bdb36d9c035be9da4c15dc5455546cbcffe823e1cc0cb51019ac4085beab977e"
++    },
++    {
++      "path": "qa/visual/public-gaps.png",
++      "sha256": "0507375f046fc382e2ba2537badad1276c48ecb87d35709a9c01c028ad8dd6db"
++    },
++    {
++      "path": "qa/visual-qa.json",
++      "sha256": "9386a127dda35254e6764faa91b772b59cfbd80fe520f97a55dfc7c85be9cfa6"
++    },
++    {
++      "path": "schema/handoff.proposal.v1.json",
++      "sha256": "7b1fd803808a52794d5ad1581db02bbae98732d1adaa8285e7b0bc0c56ee96e9"
++    },
++    {
++      "path": "schema/request.v1.json",
++      "sha256": "ea2576167e6e94733e1f797e26bd504d28acfc0e5ff05161f6e2e6d3a68e2891"
++    },
++    {
++      "path": "schema/result.v1.json",
++      "sha256": "fc8bb7b49786f9e4a1221f26062bcd0999395eee7705f47dcf75b85835018cc8"
++    },
++    {
++      "path": "ui/dashboard.css",
++      "sha256": "4c86e4492602e46852cbe52612db8f4c9ce062b6fa16b561b1888d2a8b33792e"
++    },
++    {
++      "path": "ui/dashboard.js",
++      "sha256": "aa290a4fb7a1ad83b2c68dd9d4ff1111af57f07a5fd2c16fba2eb809de79667a"
++    },
++    {
++      "path": "vendor/finterm/LICENSE",
++      "sha256": "83a2c370b7a30045643a5c3236b27aa4ea6c0f3dee54672297be9320fa4a7cc3"
++    },
++    {
++      "path": "vendor/finterm/skills/buffett-investment-framework/agents/openai.yaml",
++      "sha256": "361925fff549a33278fd44988f46da2999c3b35e432926ff711143c74c73f239"
++    },
++    {
++      "path": "vendor/finterm/skills/buffett-investment-framework/references/00-source-key.md",
++      "sha256": "fd0c4fd472b6c8b4b04dd7f28a100aa33fd3e971ce4de89cf4106a71e6d5b9b8"
++    },
++    {
++      "path": "vendor/finterm/skills/buffett-investment-framework/references/01-decision-posture.md",
++      "sha256": "2b61a70670c826c4e1d952ea55bb53eeb39ed39d95179164d2ea8f6aa56edb3d"
++    },
++    {
++      "path": "vendor/finterm/skills/buffett-investment-framework/references/02-business-economics.md",
++      "sha256": "839e3d8a80441f13a0f33eb4e19d8b175f97effa3c80a9abac0405ee8eb94afc"
++    },
++    {
++      "path": "vendor/finterm/skills/buffett-investment-framework/references/03-management-governance.md",
++      "sha256": "adf715871f20c41f811bf03d81c38368f00bbed068262f57c90ec9d309e6a322"
++    },
++    {
++      "path": "vendor/finterm/skills/buffett-investment-framework/references/04-financial-reality.md",
++      "sha256": "4a9f62a3c91f16f23c812411a849d3180e0361a1b69755ce84d9f60619e2e767"
++    },
++    {
++      "path": "vendor/finterm/skills/buffett-investment-framework/references/05-valuation.md",
++      "sha256": "03a9395e0c4563d96d865638e953894a842f0475495c0f7e0e4d7d2428f1abca"
++    },
++    {
++      "path": "vendor/finterm/skills/buffett-investment-framework/references/06-capital-allocation.md",
++      "sha256": "15f712f413c8db01dca0f2c92988732899acaf4b4229fcabd38da5e5a4b1960d"
++    },
++    {
++      "path": "vendor/finterm/skills/buffett-investment-framework/references/07-risk-monitoring.md",
++      "sha256": "d5a61603a98bf09a99f16e8545da69474a685f963c693511f01e5fc7297ecad1"
++    },
++    {
++      "path": "vendor/finterm/skills/buffett-investment-framework/references/08-specialized-overlays.md",
++      "sha256": "fde84b1f8539a19daf47368477ce9b1b35df9d0efc9de533e94715244c50f3c9"
++    },
++    {
++      "path": "vendor/finterm/skills/buffett-investment-framework/scripts/framework.py",
++      "sha256": "37c8db45c48aef8ac43f45732a0cfa632353ab69440ec0a35d9abd26d1c8f488"
++    },
++    {
++      "path": "vendor/finterm/skills/buffett-investment-framework/SKILL.md",
++      "sha256": "4e68fa9add83b8a688dc185e12ae0619d93214e28905a3676ddc2823f49cf4bf"
++    }
++  ],
++  "saved_fixture_results_identical": true,
++  "frontend_security": "Reused accepted R1 21/21; frontend source, schema and dashboard bytes identical.",
++  "visual_proof": "Reused three accepted actual PNGs and original visual-qa.json; final dashboard bytes identical.",
++  "runtime_contract_version": "offline-alpha-dawn/v1.1",
++  "no_stub_or_gap_feature_added": true
++}
+diff --git a/R2_REVIEW_MAP.md b/R2_REVIEW_MAP.md
+new file mode 100644
+index 0000000..44c6380
+--- /dev/null
++++ b/R2_REVIEW_MAP.md
+@@ -0,0 +1,13 @@
++# T3 第2轮：年度预测时间完整性
++
++只修正 T3-R2-01。v1.1 仅支持连续年度预测：首期从估值日次日开始，随后每期从前期结束次日开始。既有年度长度、现金流终止日、期间定义和单位检查保留；未增加 stub/gap 功能。
++
++`adapter.py` 在年度循环中检查相邻期间，违反时返回 `NONCONSECUTIVE_FORECAST_PERIODS`，EV及后续股权/报价结果留空。新增四项回归均以五个期间匹配的假设作为输入，覆盖连续两年、指定九个月以上重叠、一天间隔、首期遗漏一天。完整后端54项通过；前端、schema、config、样例及其保存结果、仪表盘、三张PNG均保持R1字节，沿用已验收的21项前端及视觉证据。
++
++`qa/r2-period-integrity.json` 记录四个时间探针及未改字节核对。`qa/backend-tests.json` 记录本轮实际检查和源码哈希。`CHANGES.patch` 为完整新增差异，`R2_CHANGES.patch` 相对保留的R1目录。`MANIFEST.sha256.json` 记录包内字节。R1的验收映射和视觉回执作为历史证据保留，没有重新执行T2、没有改写原生方法。
++
++首份ZIP SHA-256：914305985cf734d68672bfeae0b1f698b1183eb2bbcde374cfb023612f24eceb。
++
++R1 ZIP SHA-256：864050bdbc14d5f66916b8a6584b4412e154c4675ee814307e754d262ad638ad。
++
++两份既有提交保留；本包只供私有复查，尚未发布、推送、启动编排或集成真实机器人。
+diff --git a/README.md b/README.md
+index cbc5e71..ef7a91b 100644
+--- a/README.md
++++ b/README.md
+@@ -1,6 +1,6 @@
+ # Alpha Dawn 离线研究适配候选包
+ 
+-本包只服务 `alpha-dawn-framework`。这是T3第1轮修正，契约版本v1.1。原生方法输出、新增质量评分、条件DCF、证据覆盖和不确定性分别保留；没有买卖总分、发送通道或交易能力。首轮候选字节另存未修改，此包尚未部署或验证投资收益。
++本包只服务 `alpha-dawn-framework`。这是T3第2轮修正，契约版本v1.1。年度预测首期从估值日次日开始，后续期间从上一期间结束的次日开始；重叠、间隔及首期遗漏会阻断EV。原生方法输出、新增质量评分、条件DCF、证据覆盖和不确定性分别保留；没有买卖总分、发送通道或交易能力。两份已提交候选字节另存未修改，此包尚未部署或验证投资收益。
+ 
+ ## 本地使用
+ 
+diff --git a/scripts/package_candidate.py b/scripts/package_candidate.py
+index e3d4270..8f180c6 100644
+--- a/scripts/package_candidate.py
++++ b/scripts/package_candidate.py
+@@ -61,7 +61,7 @@ if any(i.split(".")[0] in {"socket","subprocess","requests","http","ftplib","smt
+     raise SystemExit("Network/sender import in adapter.")
+ 
+ # R1 includes only explicitly requested public/synthetic dashboard render PNGs; profiles/helpers stay outside ROOT.
+-excluded={"CHANGES.patch","MANIFEST.sha256.json","PACKAGE_CONTENTS.txt","R1_CHANGES.patch"}
++excluded={"CHANGES.patch","MANIFEST.sha256.json","PACKAGE_CONTENTS.txt","R2_CHANGES.patch"}
+ files=sorted(p for p in ROOT.rglob("*") if p.is_file() and "__pycache__" not in p.parts and p.suffix!=".pyc" and p.name not in excluded)
+ private_pattern=re.compile(r"(?<![A-Za-z])[A-Za-z]:[\\/]|\bcli_[A-Za-z0-9]{16,}\b|\bsk-(?:proj-)?[A-Za-z0-9_-]{20,}\b")
+ for path in files:
+@@ -83,8 +83,8 @@ for path in files:
+         raise SystemExit("Diff failed; no unreconstructable marker substituted.")
+     patch.append(addition.stdout)
+ (ROOT/"CHANGES.patch").write_bytes(b"".join(patch))
+-# A focused R1 diff accompanies the complete-additions patch. The frozen first directory is read-only.
+-old_root=TASK/"t3-alpha-dawn-offline"
++# A focused R2 diff accompanies the complete-additions patch. The accepted R1 directory is read-only.
++old_root=TASK/"t3-alpha-dawn-offline-r1"
+ r1=[]
+ for path in files:
+     relative=path.relative_to(ROOT).as_posix();old_path=old_root/relative
+@@ -93,7 +93,7 @@ for path in files:
+     before=(old_root.name+"/"+relative) if old_path.exists() else "/dev/null"
+     after=ROOT.name+"/"+relative
+     change=subprocess.run(["git","--no-optional-locks","-c","core.autocrlf=false","diff","--no-index","--binary","--",before,after],cwd=TASK,capture_output=True)
+-    if change.returncode!=1:raise SystemExit("R1 diff failed.")
++    if change.returncode!=1:raise SystemExit("R2 diff failed.")
+     # Normalize only filename headers; preserve hunk/binary bytes, BOMs and final-newline markers.
+     lines=change.stdout.splitlines(keepends=True)
+     for i,line in enumerate(lines):
+@@ -102,15 +102,15 @@ for path in files:
+             line=line.replace(("a/"+ROOT.name+"/").encode(),b"a/")
+             lines[i]=line
+     r1.append(b"".join(lines))
+-(ROOT/"R1_CHANGES.patch").write_bytes(b"".join(r1))
++(ROOT/"R2_CHANGES.patch").write_bytes(b"".join(r1))
+ manifest=[]
+-for path in files+[ROOT/"CHANGES.patch",ROOT/"R1_CHANGES.patch"]:
++for path in files+[ROOT/"CHANGES.patch",ROOT/"R2_CHANGES.patch"]:
+     blob=path.read_bytes();manifest.append({"path":path.relative_to(ROOT).as_posix(),"bytes":len(blob),"sha256":hashlib.sha256(blob).hexdigest()})
+ write("MANIFEST.sha256.json",{"performed_at":stamp,"files":manifest,"self_hash_excluded":True,
+                              "diff_baseline":"empty isolated directory; all additions. Existing Alpha Dawn untouched."})
+-(ROOT/"PACKAGE_CONTENTS.txt").write_text("\n".join(sorted([p.relative_to(ROOT).as_posix() for p in files]+["CHANGES.patch","R1_CHANGES.patch","MANIFEST.sha256.json","PACKAGE_CONTENTS.txt"]))+"\n",encoding="utf-8")
++(ROOT/"PACKAGE_CONTENTS.txt").write_text("\n".join(sorted([p.relative_to(ROOT).as_posix() for p in files]+["CHANGES.patch","R2_CHANGES.patch","MANIFEST.sha256.json","PACKAGE_CONTENTS.txt"]))+"\n",encoding="utf-8")
+ destination=TASK/"output";destination.mkdir(exist_ok=True)
+-archive=destination/"t3-alpha-dawn-offline-candidate-r1.zip"
++archive=destination/"t3-alpha-dawn-offline-candidate-r2.zip"
+ final_files=sorted(p for p in ROOT.rglob("*") if p.is_file() and "__pycache__" not in p.parts and p.suffix!=".pyc")
+ with zipfile.ZipFile(archive,"w",compression=zipfile.ZIP_DEFLATED) as z:
+     for path in final_files:z.write(path,ROOT.name+"/"+path.relative_to(ROOT).as_posix())
+@@ -122,5 +122,5 @@ with zipfile.ZipFile(archive) as z:
+ receipt={"archive":archive.name,"sha256":hashlib.sha256(archive.read_bytes()).hexdigest(),"bytes":archive.stat().st_size,
+          "file_count":len(final_files),"performed_at":stamp,"backend_passed":backend_report["passed"],
+          "frontend_passed":adapter.read_json(ROOT/"qa/dashboard-tests.json")["passed"],"zip_integrity":"passed"}
+-(destination/"t3-local-package-receipt-r1.json").write_text(json.dumps(receipt,indent=2)+"\n",encoding="utf-8")
++(destination/"t3-local-package-receipt-r2.json").write_text(json.dumps(receipt,indent=2)+"\n",encoding="utf-8")
+ print(json.dumps(receipt))
+diff --git a/tests/test_adapter.py b/tests/test_adapter.py
+index 6bb16cf..d1bb46c 100644
+--- a/tests/test_adapter.py
++++ b/tests/test_adapter.py
+@@ -391,6 +391,51 @@ class AdapterTests(unittest.TestCase):
+         self.data["quality_window"]["latest_interim"]=copy.deepcopy(self.data["quality_window"]["fiscal_years"][-1])
+         with self.assertRaises(adapter.Rejected):adapter.process(self.data)
+ 
++    def add_forecast_period(self, start, end, replace_first=False):
++        scenario = self.data["valuation"]["scenarios"][1]
++        year = copy.deepcopy(scenario["forecast"][0])
++        year["period"] = {"start": start, "end": end, "frequency": "annual"}
++        year["cashflow_date"] = end
++        for key in ("ebit_ref", "tax_ref", "da_ref", "capex_ref", "nwc_change_ref"):
++            source_id = year[key]["assumption_id"]
++            assumption = copy.deepcopy(next(a for a in self.data["assumptions"] if a["id"] == source_id))
++            assumption["id"] += ".timeline"
++            assumption["period"] = copy.deepcopy(year["period"])
++            self.data["assumptions"].append(assumption)
++            year[key] = {"assumption_id": assumption["id"]}
++        if replace_first:
++            scenario["forecast"][0] = year
++        else:
++            scenario["forecast"].append(year)
++
++    def test_r2_consecutive_two_year_forecast_is_valid(self):
++        self.add_forecast_period("2027-10-13", "2028-10-12")
++        row = self.scenario()
++        expected = 78000000 / 1.1 + (78000000 + 78000000 * 1.02 / .08) / 1.1 ** (731 / 365)
++        self.assertAlmostEqual(row["ev"], expected, places=5)
++        self.assertEqual(len(row["fcff"]), 2)
++        self.assertEqual([r["fcff"] for r in row["fcff"]], [78000000, 78000000])
++        self.assertFalse(row["diagnostics"])
++
++    def test_r2_exact_overlapping_annual_forecasts_are_rejected(self):
++        self.add_forecast_period("2027-01-01", "2027-12-31")
++        row = self.scenario()
++        self.assertIsNone(row["ev"])
++        self.assertIsNone(row["equity"])
++        self.assertTrue(any(d["code"] == "NONCONSECUTIVE_FORECAST_PERIODS" for d in row["diagnostics"]))
++
++    def test_r2_gap_between_annual_forecasts_is_rejected(self):
++        self.add_forecast_period("2027-10-14", "2028-10-13")
++        row = self.scenario()
++        self.assertIsNone(row["ev"])
++        self.assertTrue(any(d["code"] == "NONCONSECUTIVE_FORECAST_PERIODS" for d in row["diagnostics"]))
++
++    def test_r2_initial_omitted_interval_is_rejected(self):
++        self.add_forecast_period("2026-10-14", "2027-10-13", replace_first=True)
++        row = self.scenario()
++        self.assertIsNone(row["ev"])
++        self.assertTrue(any(d["code"] == "NONCONSECUTIVE_FORECAST_PERIODS" for d in row["diagnostics"]))
++
+     def test_r1_actual_period_cannot_postdate_its_publication(self):
+         self.fact("e.Q03")["published_at"]="2024-01-01T00:00:00Z"
+         result=adapter.process(self.data)

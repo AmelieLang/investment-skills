@@ -1,0 +1,2124 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "offline-alpha-dawn/v1.1"
+    },
+    "case_id": {
+      "type": "string",
+      "pattern": "[A-Za-z0-9_.-]+",
+      "maxLength": 150
+    },
+    "bot_id": {
+      "const": "alpha-dawn-framework"
+    },
+    "result_id": {
+      "type": "string",
+      "pattern": "[0-9a-f]{64}"
+    },
+    "input_hash": {
+      "type": "string",
+      "pattern": "[0-9a-f]{64}"
+    },
+    "cutoff_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "evaluated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "valuation_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "security": {
+      "$ref": "#/$defs/security"
+    },
+    "method_manifest": {
+      "type": "object",
+      "properties": {
+        "repository": {
+          "const": "https://github.com/finterm-ai/investment-skills"
+        },
+        "commit": {
+          "const": "7235d3411601036cc79137fa0aec0d587f2c8e19"
+        },
+        "framework_path": {
+          "const": "skills/buffett-investment-framework/"
+        },
+        "license": {
+          "type": "object",
+          "properties": {
+            "spdx": {
+              "const": "MIT"
+            },
+            "copyright": {
+              "type": "string",
+              "maxLength": 30000
+            },
+            "status": {
+              "const": "verified"
+            },
+            "verified_date": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          "required": [
+            "spdx",
+            "copyright",
+            "status",
+            "verified_date"
+          ],
+          "additionalProperties": false
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "maxLength": 30000
+              },
+              "git_blob_sha": {
+                "type": "string",
+                "pattern": "[0-9a-f]{40}"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "[0-9a-f]{64}"
+              },
+              "bytes": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "path",
+              "git_blob_sha",
+              "sha256",
+              "bytes"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 13,
+          "maxItems": 13
+        },
+        "native_boundary": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "optional_macro": {
+          "type": "object",
+          "properties": {
+            "repository": {
+              "type": "string",
+              "maxLength": 30000
+            },
+            "commit": {
+              "type": "string",
+              "pattern": "[0-9a-f]{40}"
+            },
+            "enabled": {
+              "const": false
+            },
+            "attribution": {
+              "type": "string",
+              "maxLength": 30000
+            }
+          },
+          "required": [
+            "repository",
+            "commit",
+            "enabled",
+            "attribution"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "repository",
+        "commit",
+        "framework_path",
+        "license",
+        "files",
+        "native_boundary",
+        "optional_macro"
+      ],
+      "additionalProperties": false
+    },
+    "native_output": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "intent": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "reason": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "raw_text": {
+          "type": "string",
+          "maxLength": 30000
+        }
+      },
+      "required": [],
+      "additionalProperties": {}
+    },
+    "native_output_hash": {
+      "type": "string",
+      "pattern": "[0-9a-f]{64}"
+    },
+    "native_execution": {
+      "const": "not_executed_by_adapter"
+    },
+    "quality": {
+      "type": "object",
+      "properties": {
+        "origin": {
+          "const": "custom_analysis_not_native_buffett"
+        },
+        "rubric_version": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "application_version": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "observation_window": {
+          "type": "object",
+          "properties": {
+            "declaration": {
+              "type": "object",
+              "properties": {
+                "policy_id": {
+                  "const": "latest_three_fiscal_years_plus_latest_interim/v1"
+                },
+                "mode": {
+                  "enum": [
+                    "default",
+                    "case_specific"
+                  ]
+                },
+                "frozen_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "override_reason": {
+                  "type": "string",
+                  "maxLength": 30000
+                },
+                "fiscal_years": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "start": {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      "end": {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      "frequency": {
+                        "enum": [
+                          "annual",
+                          "interim",
+                          "quarterly",
+                          "instant"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "start",
+                      "end",
+                      "frequency"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "minItems": 0,
+                  "maxItems": 3
+                },
+                "latest_interim": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "properties": {
+                    "start": {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "end": {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "frequency": {
+                      "enum": [
+                        "interim",
+                        "quarterly"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "start",
+                    "end",
+                    "frequency"
+                  ],
+                  "additionalProperties": false
+                },
+                "calendar_basis_fact_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "[A-Za-z0-9_.-]+",
+                    "maxLength": 150
+                  },
+                  "minItems": 0,
+                  "maxItems": 1000
+                }
+              },
+              "required": [
+                "policy_id",
+                "mode",
+                "frozen_at",
+                "override_reason",
+                "fiscal_years",
+                "latest_interim",
+                "calendar_basis_fact_ids"
+              ],
+              "additionalProperties": false
+            },
+            "status": {
+              "enum": [
+                "met",
+                "unmet"
+              ]
+            },
+            "reasons": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "maxLength": 30000
+              },
+              "minItems": 0,
+              "maxItems": 1000
+            },
+            "components": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "component_id": {
+                    "type": "string",
+                    "pattern": "[A-Za-z0-9_.-]+",
+                    "maxLength": 150
+                  },
+                  "requirement_id": {
+                    "type": "string",
+                    "pattern": "[A-Za-z0-9_.-]+",
+                    "maxLength": 150
+                  },
+                  "status": {
+                    "enum": [
+                      "met",
+                      "unmet"
+                    ]
+                  },
+                  "missing_periods": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "start": {
+                          "type": "string",
+                          "format": "date"
+                        },
+                        "end": {
+                          "type": "string",
+                          "format": "date"
+                        },
+                        "frequency": {
+                          "enum": [
+                            "annual",
+                            "interim",
+                            "quarterly",
+                            "instant"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "start",
+                        "end",
+                        "frequency"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "minItems": 0,
+                    "maxItems": 1000
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "[A-Za-z0-9_.-]+",
+                      "maxLength": 150
+                    },
+                    "minItems": 0,
+                    "maxItems": 1000
+                  }
+                },
+                "required": [
+                  "component_id",
+                  "requirement_id",
+                  "status",
+                  "missing_periods",
+                  "evidence_ids"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 5,
+              "maxItems": 5
+            }
+          },
+          "required": [
+            "declaration",
+            "status",
+            "reasons",
+            "components"
+          ],
+          "additionalProperties": false
+        },
+        "components": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/component_result"
+          },
+          "minItems": 5,
+          "maxItems": 5
+        },
+        "aggregation": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "total": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "arithmetic_total": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "observed_contribution": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "observed_weight": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "possible_range": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "status": {
+          "enum": [
+            "complete",
+            "partial",
+            "blocked_by_hard_risk"
+          ]
+        },
+        "hard_risks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/flag_result"
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        }
+      },
+      "required": [
+        "origin",
+        "rubric_version",
+        "application_version",
+        "observation_window",
+        "components",
+        "aggregation",
+        "total",
+        "arithmetic_total",
+        "observed_contribution",
+        "observed_weight",
+        "possible_range",
+        "status",
+        "hard_risks"
+      ],
+      "additionalProperties": false
+    },
+    "valuation": {
+      "type": "object",
+      "properties": {
+        "origin": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "model": {
+          "const": "fcff_dcf_v1"
+        },
+        "currency": {
+          "type": "string",
+          "pattern": "[A-Z]{3}"
+        },
+        "scenarios": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "enum": [
+                  "bear",
+                  "base",
+                  "bull"
+                ]
+              },
+              "currency": {
+                "type": "string",
+                "pattern": "[A-Z]{3}"
+              },
+              "comparison_status": {
+                "enum": [
+                  "computed",
+                  "not_computable",
+                  "nonpositive_domain"
+                ]
+              },
+              "ev": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "equity": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "ordinary_value": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "quote_value_model_currency": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "quote_value": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "upside_vs_price": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "margin_to_model_value": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "fcff": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "date": {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "year_fraction_ACT_365F": {
+                      "type": "number"
+                    },
+                    "fcff": {
+                      "type": "number"
+                    },
+                    "present_value": {
+                      "type": "number"
+                    },
+                    "input_refs": {
+                      "$ref": "#/$defs/forecast"
+                    }
+                  },
+                  "required": [
+                    "date",
+                    "year_fraction_ACT_365F",
+                    "fcff",
+                    "present_value",
+                    "input_refs"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 0,
+                "maxItems": 1000
+              },
+              "bridge": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "[A-Za-z0-9_.-]+",
+                      "maxLength": 150
+                    },
+                    "role": {
+                      "enum": [
+                        "cash",
+                        "non_operating_assets",
+                        "gross_debt",
+                        "lease_liabilities",
+                        "preferred",
+                        "noncontrolling_interest",
+                        "other_claims"
+                      ]
+                    },
+                    "amount_ref": {
+                      "$ref": "#/$defs/value_ref"
+                    },
+                    "included_in": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "amount": {
+                      "type": "number"
+                    },
+                    "applied_signed_amount": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "role",
+                    "amount_ref",
+                    "included_in",
+                    "amount",
+                    "applied_signed_amount"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 0,
+                "maxItems": 1000
+              },
+              "diagnostics": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "stage": {
+                      "type": "string",
+                      "maxLength": 30000
+                    },
+                    "code": {
+                      "type": "string",
+                      "maxLength": 30000
+                    },
+                    "detail": {
+                      "type": "string",
+                      "maxLength": 30000
+                    }
+                  },
+                  "required": [
+                    "stage",
+                    "code",
+                    "detail"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 0,
+                "maxItems": 1000
+              },
+              "terminal_value": {
+                "type": "number"
+              },
+              "wacc": {
+                "type": "number"
+              },
+              "terminal_growth": {
+                "type": "number"
+              },
+              "net_cash": {
+                "type": "number"
+              },
+              "price": {
+                "type": "number"
+              },
+              "formula": {
+                "type": "string",
+                "maxLength": 30000
+              },
+              "fx_basis": {}
+            },
+            "required": [
+              "name",
+              "currency",
+              "comparison_status",
+              "ev",
+              "equity",
+              "ordinary_value",
+              "quote_value_model_currency",
+              "quote_value",
+              "upside_vs_price",
+              "margin_to_model_value",
+              "fcff",
+              "bridge",
+              "diagnostics"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "recommendation": {
+          "type": "null"
+        },
+        "native_abstention_preserved": {
+          "const": true
+        },
+        "interpretation": {
+          "type": "string",
+          "maxLength": 30000
+        }
+      },
+      "required": [
+        "origin",
+        "model",
+        "currency",
+        "scenarios",
+        "recommendation",
+        "native_abstention_preserved",
+        "interpretation"
+      ],
+      "additionalProperties": false
+    },
+    "evidence_coverage": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "satisfied": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "declared": {
+          "const": 27
+        },
+        "ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "requirements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/requirement_result"
+          },
+          "minItems": 27,
+          "maxItems": 27
+        },
+        "document_availability": {
+          "type": "object",
+          "properties": {
+            "available": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "declared_fact_sources": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "available",
+            "declared_fact_sources"
+          ],
+          "additionalProperties": false
+        },
+        "modules": {
+          "type": "object",
+          "properties": {
+            "quality": {
+              "type": "object",
+              "properties": {
+                "satisfied": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "declared": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "satisfied",
+                "declared"
+              ],
+              "additionalProperties": false
+            },
+            "dcf": {
+              "type": "object",
+              "properties": {
+                "satisfied": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "declared": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "satisfied",
+                "declared"
+              ],
+              "additionalProperties": false
+            },
+            "comparison": {
+              "type": "object",
+              "properties": {
+                "satisfied": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "declared": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "satisfied",
+                "declared"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "quality",
+            "dcf",
+            "comparison"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "name",
+        "satisfied",
+        "declared",
+        "ratio",
+        "requirements",
+        "document_availability",
+        "modules"
+      ],
+      "additionalProperties": false
+    },
+    "uncertainty": {
+      "type": "object",
+      "properties": {
+        "unresolved_contradictions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/contradiction"
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "ineligible_facts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "[A-Za-z0-9_.-]+",
+                "maxLength": 150
+              },
+              "reasons": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "maxLength": 30000
+                },
+                "minItems": 0,
+                "maxItems": 1000
+              }
+            },
+            "required": [
+              "id",
+              "reasons"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/assumption"
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "falsifiers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/falsifier"
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "hard_risks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/flag_result"
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 30000
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        }
+      },
+      "required": [
+        "unresolved_contradictions",
+        "ineligible_facts",
+        "assumptions",
+        "falsifiers",
+        "hard_risks",
+        "notes"
+      ],
+      "additionalProperties": false
+    },
+    "evidence_receipt": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/fact"
+      },
+      "minItems": 0,
+      "maxItems": 1000
+    },
+    "capabilities": {
+      "type": "object",
+      "properties": {
+        "network": {
+          "const": false
+        },
+        "send": {
+          "const": false
+        },
+        "trade": {
+          "const": false
+        },
+        "execute_source_text": {
+          "const": false
+        }
+      },
+      "required": [
+        "network",
+        "send",
+        "trade",
+        "execute_source_text"
+      ],
+      "additionalProperties": false
+    },
+    "operation_status": {
+      "enum": [
+        "validated",
+        "computed"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "case_id",
+    "bot_id",
+    "result_id",
+    "input_hash",
+    "cutoff_at",
+    "evaluated_at",
+    "valuation_date",
+    "security",
+    "method_manifest",
+    "native_output",
+    "native_output_hash",
+    "native_execution",
+    "quality",
+    "valuation",
+    "evidence_coverage",
+    "uncertainty",
+    "evidence_receipt",
+    "capabilities"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:offline-alpha-dawn:result:v1",
+  "$defs": {
+    "source": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "[A-Za-z0-9_.-]+",
+          "maxLength": 150
+        },
+        "uri": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "locator": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "visibility": {
+          "enum": [
+            "public",
+            "synthetic"
+          ]
+        },
+        "available": {
+          "type": "boolean"
+        },
+        "published_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        }
+      },
+      "required": [
+        "id",
+        "uri",
+        "locator",
+        "visibility",
+        "available",
+        "published_date"
+      ],
+      "additionalProperties": false
+    },
+    "fact": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "[A-Za-z0-9_.-]+",
+          "maxLength": 150
+        },
+        "metric": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "kind": {
+          "enum": [
+            "actual",
+            "guidance",
+            "estimate"
+          ]
+        },
+        "value": {
+          "type": [
+            "number",
+            "string",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "currency": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "[A-Z]{3}"
+        },
+        "period": {
+          "type": "object",
+          "properties": {
+            "start": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "date"
+            },
+            "end": {
+              "type": "string",
+              "format": "date"
+            },
+            "frequency": {
+              "enum": [
+                "multi_year",
+                "annual",
+                "interim",
+                "quarterly",
+                "instant"
+              ]
+            }
+          },
+          "required": [
+            "start",
+            "end",
+            "frequency"
+          ],
+          "additionalProperties": false
+        },
+        "periods_observed": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "start": {
+                "type": "string",
+                "format": "date"
+              },
+              "end": {
+                "type": "string",
+                "format": "date"
+              },
+              "frequency": {
+                "enum": [
+                  "annual",
+                  "interim",
+                  "quarterly",
+                  "instant"
+                ]
+              }
+            },
+            "required": [
+              "start",
+              "end",
+              "frequency"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "financial_definition": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            null,
+            "operating_ebit",
+            "effective_cash_tax_rate",
+            "noncash_da",
+            "capital_expenditure",
+            "change_in_operating_nwc",
+            "discount_rate",
+            "terminal_growth"
+          ]
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "published_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "vintage_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "evidence_kind": {
+          "enum": [
+            "reported",
+            "historical",
+            "historical_stress",
+            "hypothetical",
+            "calculation"
+          ]
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        }
+      },
+      "required": [
+        "id",
+        "metric",
+        "kind",
+        "value",
+        "unit",
+        "currency",
+        "period",
+        "periods_observed",
+        "financial_definition",
+        "observed_at",
+        "published_at",
+        "vintage_at",
+        "evidence_kind",
+        "source"
+      ],
+      "additionalProperties": false
+    },
+    "assumption": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "[A-Za-z0-9_.-]+",
+          "maxLength": 150
+        },
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "currency": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "[A-Z]{3}"
+        },
+        "scenario": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "author": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "rationale": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "supporting_fact_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "[A-Za-z0-9_.-]+",
+            "maxLength": 150
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "period": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "start": {
+              "type": "string",
+              "format": "date"
+            },
+            "end": {
+              "type": "string",
+              "format": "date"
+            },
+            "frequency": {
+              "enum": [
+                "annual",
+                "interim",
+                "quarterly",
+                "instant"
+              ]
+            }
+          },
+          "required": [
+            "start",
+            "end",
+            "frequency"
+          ],
+          "additionalProperties": false
+        },
+        "assumption_type": {
+          "enum": [
+            "forecast",
+            "carry_forward",
+            "parameter"
+          ]
+        },
+        "financial_definition": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            null,
+            "operating_ebit",
+            "effective_cash_tax_rate",
+            "noncash_da",
+            "capital_expenditure",
+            "change_in_operating_nwc",
+            "discount_rate",
+            "terminal_growth"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "value",
+        "unit",
+        "currency",
+        "scenario",
+        "author",
+        "rationale",
+        "supporting_fact_ids",
+        "period",
+        "assumption_type",
+        "financial_definition"
+      ],
+      "additionalProperties": false
+    },
+    "value_ref": {
+      "type": "object",
+      "properties": {
+        "fact_id": {
+          "type": "string",
+          "pattern": "[A-Za-z0-9_.-]+",
+          "maxLength": 150
+        },
+        "assumption_id": {
+          "type": "string",
+          "pattern": "[A-Za-z0-9_.-]+",
+          "maxLength": 150
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "anchor": {
+      "type": "object",
+      "properties": {
+        "level": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4
+        },
+        "status": {
+          "enum": [
+            "supported",
+            "refuted",
+            "unknown",
+            "contradicted"
+          ]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "[A-Za-z0-9_.-]+",
+            "maxLength": 150
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "counter_evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "[A-Za-z0-9_.-]+",
+            "maxLength": 150
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "rationale": {
+          "type": "string",
+          "maxLength": 30000
+        }
+      },
+      "required": [
+        "level",
+        "status",
+        "evidence_ids",
+        "counter_evidence_ids",
+        "rationale"
+      ],
+      "additionalProperties": false
+    },
+    "judgment": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "[A-Za-z0-9_.-]+",
+          "maxLength": 150
+        },
+        "judge": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "anchor_reviews": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/anchor"
+          },
+          "minItems": 5,
+          "maxItems": 5
+        }
+      },
+      "required": [
+        "id",
+        "judge",
+        "anchor_reviews"
+      ],
+      "additionalProperties": false
+    },
+    "contradiction": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "[A-Za-z0-9_.-]+",
+          "maxLength": 150
+        },
+        "fact_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "[A-Za-z0-9_.-]+",
+            "maxLength": 150
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "requirement_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "[A-Za-z0-9_.-]+",
+            "maxLength": 150
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "status": {
+          "enum": [
+            "unresolved",
+            "resolved"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "resolution_reason": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "resolution_fact_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "[A-Za-z0-9_.-]+",
+            "maxLength": 150
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        }
+      },
+      "required": [
+        "id",
+        "fact_ids",
+        "requirement_ids",
+        "status",
+        "reason",
+        "resolution_reason",
+        "resolution_fact_ids"
+      ],
+      "additionalProperties": false
+    },
+    "hard": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "enum": [
+            "PAYMENT_DEFAULT",
+            "UNFUNDED_OBLIGATIONS",
+            "FINANCIAL_INTEGRITY",
+            "MINORITY_RIGHTS_ABUSE",
+            "CORE_OPERATING_RIGHT_LOSS"
+          ]
+        },
+        "status": {
+          "enum": [
+            "confirmed",
+            "suspected",
+            "resolved"
+          ]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "[A-Za-z0-9_.-]+",
+            "maxLength": 150
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "affected_fact_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "[A-Za-z0-9_.-]+",
+            "maxLength": 150
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "rationale": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "resolution_condition": {
+          "type": "string",
+          "maxLength": 30000
+        }
+      },
+      "required": [
+        "code",
+        "status",
+        "evidence_ids",
+        "affected_fact_ids",
+        "rationale",
+        "resolution_condition"
+      ],
+      "additionalProperties": false
+    },
+    "falsifier": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "[A-Za-z0-9_.-]+",
+          "maxLength": 150
+        },
+        "metric": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "operator": {
+          "enum": [
+            "lt",
+            "le",
+            "gt",
+            "ge",
+            "eq",
+            "observed_event"
+          ]
+        },
+        "threshold": {
+          "type": [
+            "number",
+            "string",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "period": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "impact": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "status": {
+          "enum": [
+            "pending",
+            "triggered",
+            "not_triggered"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "metric",
+        "operator",
+        "threshold",
+        "unit",
+        "period",
+        "impact",
+        "status"
+      ],
+      "additionalProperties": false
+    },
+    "forecast": {
+      "type": "object",
+      "properties": {
+        "cashflow_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "period": {
+          "type": "object",
+          "properties": {
+            "start": {
+              "type": "string",
+              "format": "date"
+            },
+            "end": {
+              "type": "string",
+              "format": "date"
+            },
+            "frequency": {
+              "enum": [
+                "annual",
+                "interim",
+                "quarterly",
+                "instant"
+              ]
+            }
+          },
+          "required": [
+            "start",
+            "end",
+            "frequency"
+          ],
+          "additionalProperties": false
+        },
+        "ebit_ref": {
+          "$ref": "#/$defs/value_ref"
+        },
+        "tax_ref": {
+          "$ref": "#/$defs/value_ref"
+        },
+        "da_ref": {
+          "$ref": "#/$defs/value_ref"
+        },
+        "capex_ref": {
+          "$ref": "#/$defs/value_ref"
+        },
+        "nwc_change_ref": {
+          "$ref": "#/$defs/value_ref"
+        }
+      },
+      "required": [
+        "cashflow_date",
+        "period",
+        "ebit_ref",
+        "tax_ref",
+        "da_ref",
+        "capex_ref",
+        "nwc_change_ref"
+      ],
+      "additionalProperties": false
+    },
+    "scenario": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "enum": [
+            "bear",
+            "base",
+            "bull"
+          ]
+        },
+        "forecast": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/forecast"
+          },
+          "minItems": 0,
+          "maxItems": 30
+        },
+        "wacc_ref": {
+          "$ref": "#/$defs/value_ref"
+        },
+        "terminal_growth_ref": {
+          "$ref": "#/$defs/value_ref"
+        }
+      },
+      "required": [
+        "name",
+        "forecast",
+        "wacc_ref",
+        "terminal_growth_ref"
+      ],
+      "additionalProperties": false
+    },
+    "bridge": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "[A-Za-z0-9_.-]+",
+          "maxLength": 150
+        },
+        "role": {
+          "enum": [
+            "cash",
+            "non_operating_assets",
+            "gross_debt",
+            "lease_liabilities",
+            "preferred",
+            "noncontrolling_interest",
+            "other_claims"
+          ]
+        },
+        "amount_ref": {
+          "$ref": "#/$defs/value_ref"
+        },
+        "included_in": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "role",
+        "amount_ref",
+        "included_in"
+      ],
+      "additionalProperties": false
+    },
+    "security": {
+      "type": "object",
+      "properties": {
+        "listing_id": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "quote_currency": {
+          "type": "string",
+          "pattern": "[A-Z]{3}"
+        },
+        "quote_unit": {
+          "enum": [
+            "ADS",
+            "ordinary"
+          ]
+        },
+        "ordinary_shares_ref": {
+          "$ref": "#/$defs/value_ref"
+        },
+        "ordinary_per_quote_unit_ref": {
+          "$ref": "#/$defs/value_ref"
+        }
+      },
+      "required": [
+        "listing_id",
+        "quote_currency",
+        "quote_unit",
+        "ordinary_shares_ref",
+        "ordinary_per_quote_unit_ref"
+      ],
+      "additionalProperties": false
+    },
+    "valuation": {
+      "type": "object",
+      "properties": {
+        "currency": {
+          "type": "string",
+          "pattern": "[A-Z]{3}"
+        },
+        "scenarios": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/scenario"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "bridge": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/bridge"
+          },
+          "minItems": 0,
+          "maxItems": 7
+        },
+        "price_ref": {
+          "$ref": "#/$defs/value_ref"
+        },
+        "fx_ref": {
+          "$ref": "#/$defs/value_ref"
+        }
+      },
+      "required": [
+        "currency",
+        "scenarios",
+        "bridge",
+        "price_ref",
+        "fx_ref"
+      ],
+      "additionalProperties": false
+    },
+    "component_result": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "[A-Za-z0-9_.-]+",
+          "maxLength": 150
+        },
+        "label": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "weight": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "requirements": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "[A-Za-z0-9_.-]+",
+            "maxLength": 150
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "window_requirement": {
+          "type": "string",
+          "pattern": "[A-Za-z0-9_.-]+",
+          "maxLength": 150
+        },
+        "compatibility": {
+          "type": "object",
+          "properties": {
+            "adverse_levels": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "minItems": 0,
+              "maxItems": 1000
+            },
+            "compatible_positive_levels": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "minItems": 0,
+              "maxItems": 1000
+            },
+            "entailed_positive_levels": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "minItems": 0,
+                "maxItems": 1000
+              }
+            }
+          },
+          "required": [
+            "adverse_levels",
+            "compatible_positive_levels",
+            "entailed_positive_levels"
+          ],
+          "additionalProperties": false
+        },
+        "historical_stress_requirement": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "anchors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "level": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "anchor_id": {
+                "type": "string",
+                "maxLength": 30000
+              },
+              "text": {
+                "type": "string",
+                "maxLength": 30000
+              }
+            },
+            "required": [
+              "level",
+              "anchor_id",
+              "text"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 5,
+          "maxItems": 5
+        },
+        "score": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 4
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "anchor_reviews": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/anchor"
+          },
+          "minItems": 0,
+          "maxItems": 5
+        },
+        "judge": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "judgment_type": {
+          "const": "analyst_or_model_judgment"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "weight",
+        "requirements",
+        "window_requirement",
+        "compatibility",
+        "historical_stress_requirement",
+        "anchors",
+        "score",
+        "reason",
+        "anchor_reviews",
+        "judge",
+        "judgment_type"
+      ],
+      "additionalProperties": false
+    },
+    "flag_result": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "enum": [
+            "PAYMENT_DEFAULT",
+            "UNFUNDED_OBLIGATIONS",
+            "FINANCIAL_INTEGRITY",
+            "MINORITY_RIGHTS_ABUSE",
+            "CORE_OPERATING_RIGHT_LOSS"
+          ]
+        },
+        "status": {
+          "enum": [
+            "confirmed",
+            "suspected",
+            "resolved"
+          ]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "[A-Za-z0-9_.-]+",
+            "maxLength": 150
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "affected_fact_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "[A-Za-z0-9_.-]+",
+            "maxLength": 150
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "rationale": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "resolution_condition": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "verified_for_adapter": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "code",
+        "status",
+        "evidence_ids",
+        "affected_fact_ids",
+        "rationale",
+        "resolution_condition",
+        "verified_for_adapter"
+      ],
+      "additionalProperties": false
+    },
+    "requirement_result": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "[A-Za-z0-9_.-]+",
+          "maxLength": 150
+        },
+        "group": {
+          "enum": [
+            "quality",
+            "dcf",
+            "comparison"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "weight": {
+          "const": 1
+        },
+        "criterion": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "[A-Za-z0-9_.-]+",
+            "maxLength": 150
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "satisfied": {
+          "type": "boolean"
+        },
+        "failure_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "window_status": {
+          "enum": [
+            "met",
+            "unmet",
+            "not_required"
+          ]
+        },
+        "window_missing_periods": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "start": {
+                "type": "string",
+                "format": "date"
+              },
+              "end": {
+                "type": "string",
+                "format": "date"
+              },
+              "frequency": {
+                "enum": [
+                  "annual",
+                  "interim",
+                  "quarterly",
+                  "instant"
+                ]
+              }
+            },
+            "required": [
+              "start",
+              "end",
+              "frequency"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        }
+      },
+      "required": [
+        "id",
+        "group",
+        "title",
+        "weight",
+        "criterion",
+        "evidence_ids",
+        "satisfied",
+        "failure_reason",
+        "window_status",
+        "window_missing_periods"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

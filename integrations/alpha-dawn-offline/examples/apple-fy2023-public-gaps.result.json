@@ -1,0 +1,984 @@
+{
+  "schema_version": "offline-alpha-dawn/v1.1",
+  "case_id": "apple-fy2023-public-gaps",
+  "bot_id": "alpha-dawn-framework",
+  "result_id": "04d5198dbaaeb2d378f6baeba08faf43d2f5a6f417bb34bbd5653f11450469c2",
+  "input_hash": "04d5198dbaaeb2d378f6baeba08faf43d2f5a6f417bb34bbd5653f11450469c2",
+  "cutoff_at": "2023-11-03T23:59:59Z",
+  "evaluated_at": "2026-10-12T20:00:17.332296Z",
+  "valuation_date": "2023-11-03",
+  "security": {
+    "listing_id": "NASDAQ:AAPL",
+    "quote_currency": "USD",
+    "quote_unit": "ordinary",
+    "ordinary_shares_ref": {
+      "fact_id": "missing.shares"
+    },
+    "ordinary_per_quote_unit_ref": {
+      "fact_id": "missing.ordinary_ratio"
+    }
+  },
+  "method_manifest": {
+    "repository": "https://github.com/finterm-ai/investment-skills",
+    "commit": "7235d3411601036cc79137fa0aec0d587f2c8e19",
+    "framework_path": "skills/buffett-investment-framework/",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2026 finterm.ai",
+      "status": "verified",
+      "verified_date": "2026-10-12"
+    },
+    "files": [
+      {
+        "path": "LICENSE",
+        "git_blob_sha": "2db886705cbe711a6478cc559312b1969760c7df",
+        "sha256": "83a2c370b7a30045643a5c3236b27aa4ea6c0f3dee54672297be9320fa4a7cc3",
+        "bytes": 1067
+      },
+      {
+        "path": "skills/buffett-investment-framework/SKILL.md",
+        "git_blob_sha": "55f64f183a54e481b206a347ef06db2f228ca9ce",
+        "sha256": "4e68fa9add83b8a688dc185e12ae0619d93214e28905a3676ddc2823f49cf4bf",
+        "bytes": 11468
+      },
+      {
+        "path": "skills/buffett-investment-framework/agents/openai.yaml",
+        "git_blob_sha": "53b1b1c40c40b535d0e026a0a2e8aef2b431be6a",
+        "sha256": "361925fff549a33278fd44988f46da2999c3b35e432926ff711143c74c73f239",
+        "bytes": 213
+      },
+      {
+        "path": "skills/buffett-investment-framework/references/00-source-key.md",
+        "git_blob_sha": "aa23d20c5921922cc4bf214c34485f1d04f0a396",
+        "sha256": "fd0c4fd472b6c8b4b04dd7f28a100aa33fd3e971ce4de89cf4106a71e6d5b9b8",
+        "bytes": 6592
+      },
+      {
+        "path": "skills/buffett-investment-framework/references/01-decision-posture.md",
+        "git_blob_sha": "2e4463aa17a10188f0e1a320e0b0ac024d246f35",
+        "sha256": "2b61a70670c826c4e1d952ea55bb53eeb39ed39d95179164d2ea8f6aa56edb3d",
+        "bytes": 13224
+      },
+      {
+        "path": "skills/buffett-investment-framework/references/02-business-economics.md",
+        "git_blob_sha": "5402c9343892b57dc2ee956cf2ac0ec89987410b",
+        "sha256": "839e3d8a80441f13a0f33eb4e19d8b175f97effa3c80a9abac0405ee8eb94afc",
+        "bytes": 10227
+      },
+      {
+        "path": "skills/buffett-investment-framework/references/03-management-governance.md",
+        "git_blob_sha": "b74757b5a1bf461c24a1ad3697469a8450835da6",
+        "sha256": "adf715871f20c41f811bf03d81c38368f00bbed068262f57c90ec9d309e6a322",
+        "bytes": 11699
+      },
+      {
+        "path": "skills/buffett-investment-framework/references/04-financial-reality.md",
+        "git_blob_sha": "3d30aecbe3e40404646ed70d699476cda9cb0fd2",
+        "sha256": "4a9f62a3c91f16f23c812411a849d3180e0361a1b69755ce84d9f60619e2e767",
+        "bytes": 10295
+      },
+      {
+        "path": "skills/buffett-investment-framework/references/05-valuation.md",
+        "git_blob_sha": "ac51ea8840f634739a2a0f0c07d071d1218f9b93",
+        "sha256": "03a9395e0c4563d96d865638e953894a842f0475495c0f7e0e4d7d2428f1abca",
+        "bytes": 8844
+      },
+      {
+        "path": "skills/buffett-investment-framework/references/06-capital-allocation.md",
+        "git_blob_sha": "33b8d508158e2a87043300768f176fd7ee8b341b",
+        "sha256": "15f712f413c8db01dca0f2c92988732899acaf4b4229fcabd38da5e5a4b1960d",
+        "bytes": 13240
+      },
+      {
+        "path": "skills/buffett-investment-framework/references/07-risk-monitoring.md",
+        "git_blob_sha": "8e8ea5753638d2c23776d4e52582691f29ce18a4",
+        "sha256": "d5a61603a98bf09a99f16e8545da69474a685f963c693511f01e5fc7297ecad1",
+        "bytes": 10170
+      },
+      {
+        "path": "skills/buffett-investment-framework/references/08-specialized-overlays.md",
+        "git_blob_sha": "c57dc1612ffc2e6e21adc578c837887f4f9c5f2a",
+        "sha256": "fde84b1f8539a19daf47368477ce9b1b35df9d0efc9de533e94715244c50f3c9",
+        "bytes": 17507
+      },
+      {
+        "path": "skills/buffett-investment-framework/scripts/framework.py",
+        "git_blob_sha": "f49897c9d54c9dc8b5db96fad6cb28c6c823ef02",
+        "sha256": "37c8db45c48aef8ac43f45732a0cfa632353ab69440ec0a35d9abd26d1c8f488",
+        "bytes": 18085
+      }
+    ],
+    "native_boundary": "financial-analysis is not a composite stock score, trading action or forced valuation",
+    "optional_macro": {
+      "repository": "https://github.com/AmelieLang/Macro-analysis",
+      "commit": "926d035f4afa52a0ac05c1d65579455ccd22e7ee",
+      "enabled": false,
+      "attribution": "Macro-analysis project rubric; numeric thresholds are not attributed to Dalio himself"
+    }
+  },
+  "native_output": {
+    "status": "not_run",
+    "intent": "financial-analysis",
+    "reason": "Only one public revenue observation supplied; exact filings, cash/claims, governance, moat, shares, price and valuation inputs remain absent."
+  },
+  "native_output_hash": "43990824ab058bab189eba70e5dd7be3e00032a904231988deda7f74d1aac16d",
+  "native_execution": "not_executed_by_adapter",
+  "quality": {
+    "origin": "custom_analysis_not_native_buffett",
+    "rubric_version": "quality-anchors/1.0.0",
+    "observation_window": {
+      "declaration": {
+        "policy_id": "latest_three_fiscal_years_plus_latest_interim/v1",
+        "mode": "default",
+        "frozen_at": "2026-10-12T20:00:17.332296Z",
+        "override_reason": "",
+        "fiscal_years": [],
+        "latest_interim": null,
+        "calendar_basis_fact_ids": []
+      },
+      "status": "unmet",
+      "reasons": [
+        "LATEST_DISCLOSED_CALENDAR_NOT_SUPPORTED",
+        "LATEST_INTERIM_NOT_DECLARED",
+        "THREE_FULL_FISCAL_YEARS_NOT_DECLARED"
+      ],
+      "components": [
+        {
+          "component_id": "economics",
+          "requirement_id": "Q03",
+          "status": "unmet",
+          "missing_periods": [],
+          "evidence_ids": []
+        },
+        {
+          "component_id": "moat",
+          "requirement_id": "Q06",
+          "status": "unmet",
+          "missing_periods": [],
+          "evidence_ids": []
+        },
+        {
+          "component_id": "capital",
+          "requirement_id": "Q09",
+          "status": "unmet",
+          "missing_periods": [],
+          "evidence_ids": []
+        },
+        {
+          "component_id": "resilience",
+          "requirement_id": "Q11",
+          "status": "unmet",
+          "missing_periods": [],
+          "evidence_ids": []
+        },
+        {
+          "component_id": "governance",
+          "requirement_id": "Q15",
+          "status": "unmet",
+          "missing_periods": [],
+          "evidence_ids": []
+        }
+      ]
+    },
+    "application_version": "anchor-application/1.1.0",
+    "components": [
+      {
+        "id": "economics",
+        "label": "经营经济性",
+        "weight": 25,
+        "requirements": [
+          "Q01",
+          "Q02",
+          "Q03"
+        ],
+        "historical_stress_requirement": "Q03",
+        "window_requirement": "Q03",
+        "compatibility": {
+          "adverse_levels": [
+            0,
+            1
+          ],
+          "compatible_positive_levels": [
+            2,
+            3,
+            4
+          ],
+          "entailed_positive_levels": {
+            "3": [
+              2
+            ],
+            "4": [
+              2,
+              3
+            ]
+          }
+        },
+        "anchors": [
+          {
+            "level": 0,
+            "anchor_id": "economics.0",
+            "text": "常态单位经济持续负"
+          },
+          {
+            "level": 1,
+            "anchor_id": "economics.1",
+            "text": "盈利主要依赖一次性因素"
+          },
+          {
+            "level": 2,
+            "anchor_id": "economics.2",
+            "text": "正常经营盈利成立"
+          },
+          {
+            "level": 3,
+            "anchor_id": "economics.3",
+            "text": "重复需求与盈利跨期成立"
+          },
+          {
+            "level": 4,
+            "anchor_id": "economics.4",
+            "text": "不利环境仍保留经济性"
+          }
+        ],
+        "score": null,
+        "reason": "MISSING_ASSESSMENT",
+        "anchor_reviews": [],
+        "judge": null,
+        "judgment_type": "analyst_or_model_judgment"
+      },
+      {
+        "id": "moat",
+        "label": "竞争优势",
+        "weight": 20,
+        "requirements": [
+          "Q04",
+          "Q05",
+          "Q06"
+        ],
+        "historical_stress_requirement": "Q06",
+        "window_requirement": "Q06",
+        "compatibility": {
+          "adverse_levels": [
+            0,
+            1
+          ],
+          "compatible_positive_levels": [
+            2,
+            3,
+            4
+          ],
+          "entailed_positive_levels": {}
+        },
+        "anchors": [
+          {
+            "level": 0,
+            "anchor_id": "moat.0",
+            "text": "份额与定价持续被侵蚀"
+          },
+          {
+            "level": 1,
+            "anchor_id": "moat.1",
+            "text": "易替换、主要靠价格竞争"
+          },
+          {
+            "level": 2,
+            "anchor_id": "moat.2",
+            "text": "局部优势但可复制"
+          },
+          {
+            "level": 3,
+            "anchor_id": "moat.3",
+            "text": "成本、转换成本或渠道优势有证据"
+          },
+          {
+            "level": 4,
+            "anchor_id": "moat.4",
+            "text": "优势经竞争冲击仍保持"
+          }
+        ],
+        "score": null,
+        "reason": "MISSING_ASSESSMENT",
+        "anchor_reviews": [],
+        "judge": null,
+        "judgment_type": "analyst_or_model_judgment"
+      },
+      {
+        "id": "capital",
+        "label": "现金与资本效率",
+        "weight": 25,
+        "requirements": [
+          "Q07",
+          "Q08",
+          "Q09"
+        ],
+        "historical_stress_requirement": null,
+        "window_requirement": "Q09",
+        "compatibility": {
+          "adverse_levels": [
+            0,
+            1
+          ],
+          "compatible_positive_levels": [
+            2,
+            3,
+            4
+          ],
+          "entailed_positive_levels": {}
+        },
+        "anchors": [
+          {
+            "level": 0,
+            "anchor_id": "capital.0",
+            "text": "持续毁损资本"
+          },
+          {
+            "level": 1,
+            "anchor_id": "capital.1",
+            "text": "利润难转现金、再投资回报不足"
+          },
+          {
+            "level": 2,
+            "anchor_id": "capital.2",
+            "text": "常态资本回报覆盖成本"
+          },
+          {
+            "level": 3,
+            "anchor_id": "capital.3",
+            "text": "再投资后现金回报稳定"
+          },
+          {
+            "level": 4,
+            "anchor_id": "capital.4",
+            "text": "增长与每股现金回报共同兑现"
+          }
+        ],
+        "score": null,
+        "reason": "MISSING_ASSESSMENT",
+        "anchor_reviews": [],
+        "judge": null,
+        "judgment_type": "analyst_or_model_judgment"
+      },
+      {
+        "id": "resilience",
+        "label": "财务韧性",
+        "weight": 15,
+        "requirements": [
+          "Q10",
+          "Q11",
+          "Q12"
+        ],
+        "historical_stress_requirement": null,
+        "window_requirement": "Q11",
+        "compatibility": {
+          "adverse_levels": [
+            0,
+            1
+          ],
+          "compatible_positive_levels": [
+            2,
+            3,
+            4
+          ],
+          "entailed_positive_levels": {
+            "3": [
+              2
+            ],
+            "4": [
+              2,
+              3
+            ]
+          }
+        },
+        "anchors": [
+          {
+            "level": 0,
+            "anchor_id": "resilience.0",
+            "text": "已出现偿付缺口"
+          },
+          {
+            "level": 1,
+            "anchor_id": "resilience.1",
+            "text": "生存依赖再融资"
+          },
+          {
+            "level": 2,
+            "anchor_id": "resilience.2",
+            "text": "基准情景可覆盖义务"
+          },
+          {
+            "level": 3,
+            "anchor_id": "resilience.3",
+            "text": "经营下行情景仍可覆盖"
+          },
+          {
+            "level": 4,
+            "anchor_id": "resilience.4",
+            "text": "严重压力下仍有资金余量"
+          }
+        ],
+        "score": null,
+        "reason": "MISSING_ASSESSMENT",
+        "anchor_reviews": [],
+        "judge": null,
+        "judgment_type": "analyst_or_model_judgment"
+      },
+      {
+        "id": "governance",
+        "label": "治理与资本配置",
+        "weight": 15,
+        "requirements": [
+          "Q13",
+          "Q14",
+          "Q15"
+        ],
+        "historical_stress_requirement": null,
+        "window_requirement": "Q15",
+        "compatibility": {
+          "adverse_levels": [
+            0,
+            1
+          ],
+          "compatible_positive_levels": [
+            2,
+            3,
+            4
+          ],
+          "entailed_positive_levels": {}
+        },
+        "anchors": [
+          {
+            "level": 0,
+            "anchor_id": "governance.0",
+            "text": "已证实严重利益冲突"
+          },
+          {
+            "level": 1,
+            "anchor_id": "governance.1",
+            "text": "持续损害股东回报"
+          },
+          {
+            "level": 2,
+            "anchor_id": "governance.2",
+            "text": "基本对齐、记录参差"
+          },
+          {
+            "level": 3,
+            "anchor_id": "governance.3",
+            "text": "配置纪律和结果可追溯"
+          },
+          {
+            "level": 4,
+            "anchor_id": "governance.4",
+            "text": "跨期配置有效且纠错明确"
+          }
+        ],
+        "score": null,
+        "reason": "MISSING_ASSESSMENT",
+        "anchor_reviews": [],
+        "judge": null,
+        "judgment_type": "analyst_or_model_judgment"
+      }
+    ],
+    "aggregation": "deterministic_weight_times_score_over_four",
+    "total": null,
+    "arithmetic_total": null,
+    "observed_contribution": 0.0,
+    "observed_weight": 0,
+    "possible_range": [
+      0.0,
+      100.0
+    ],
+    "status": "partial",
+    "hard_risks": []
+  },
+  "valuation": {
+    "origin": "custom_FCFF_not_forced_native_output",
+    "model": "fcff_dcf_v1",
+    "currency": "USD",
+    "scenarios": [
+      {
+        "name": "bear",
+        "currency": "USD",
+        "ev": null,
+        "equity": null,
+        "ordinary_value": null,
+        "quote_value_model_currency": null,
+        "quote_value": null,
+        "upside_vs_price": null,
+        "margin_to_model_value": null,
+        "fcff": [],
+        "bridge": [],
+        "diagnostics": [
+          {
+            "stage": "ev",
+            "code": "MISSING_OR_INELIGIBLE_INPUT",
+            "detail": "bear.wacc"
+          }
+        ],
+        "comparison_status": "not_computable"
+      },
+      {
+        "name": "base",
+        "currency": "USD",
+        "ev": null,
+        "equity": null,
+        "ordinary_value": null,
+        "quote_value_model_currency": null,
+        "quote_value": null,
+        "upside_vs_price": null,
+        "margin_to_model_value": null,
+        "fcff": [],
+        "bridge": [],
+        "diagnostics": [
+          {
+            "stage": "ev",
+            "code": "MISSING_OR_INELIGIBLE_INPUT",
+            "detail": "base.wacc"
+          }
+        ],
+        "comparison_status": "not_computable"
+      },
+      {
+        "name": "bull",
+        "currency": "USD",
+        "ev": null,
+        "equity": null,
+        "ordinary_value": null,
+        "quote_value_model_currency": null,
+        "quote_value": null,
+        "upside_vs_price": null,
+        "margin_to_model_value": null,
+        "fcff": [],
+        "bridge": [],
+        "diagnostics": [
+          {
+            "stage": "ev",
+            "code": "MISSING_OR_INELIGIBLE_INPUT",
+            "detail": "bull.wacc"
+          }
+        ],
+        "comparison_status": "not_computable"
+      }
+    ],
+    "recommendation": null,
+    "native_abstention_preserved": true,
+    "interpretation": "conditional model values; no entry price or trading authority"
+  },
+  "evidence_coverage": {
+    "name": "支持性证据覆盖率（不是准确率或信心）",
+    "satisfied": 0,
+    "declared": 27,
+    "ratio": 0.0,
+    "requirements": [
+      {
+        "id": "Q01",
+        "group": "quality",
+        "title": "商业模式、收入来源与重复需求",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "not_required",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      },
+      {
+        "id": "Q02",
+        "group": "quality",
+        "title": "同口径量价、成本与正常化单位经济",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "not_required",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      },
+      {
+        "id": "Q03",
+        "group": "quality",
+        "title": "跨期稳定性、不利期表现及边界",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "unmet",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      },
+      {
+        "id": "Q04",
+        "group": "quality",
+        "title": "份额、定价与销量变化",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "not_required",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      },
+      {
+        "id": "Q05",
+        "group": "quality",
+        "title": "成本、转换成本、渠道优势的可核依据",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "not_required",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      },
+      {
+        "id": "Q06",
+        "group": "quality",
+        "title": "竞争压力及公司应对结果",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "unmet",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      },
+      {
+        "id": "Q07",
+        "group": "quality",
+        "title": "利润到经营现金再到再投资后现金的调节",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "not_required",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      },
+      {
+        "id": "Q08",
+        "group": "quality",
+        "title": "投入资本、回报与资本成本比较依据",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "not_required",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      },
+      {
+        "id": "Q09",
+        "group": "quality",
+        "title": "再投资、回购、稀释对每股现金的影响",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "unmet",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      },
+      {
+        "id": "Q10",
+        "group": "quality",
+        "title": "债务、到期结构与契约义务",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "not_required",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      },
+      {
+        "id": "Q11",
+        "group": "quality",
+        "title": "可用现金、受限资金与现金消耗",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "unmet",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      },
+      {
+        "id": "Q12",
+        "group": "quality",
+        "title": "基准及压力情景资金桥与假设",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "not_required",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      },
+      {
+        "id": "Q13",
+        "group": "quality",
+        "title": "控制权、激励与关联交易",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "not_required",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      },
+      {
+        "id": "Q14",
+        "group": "quality",
+        "title": "审计、重述及重大诚信争议",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "not_required",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      },
+      {
+        "id": "Q15",
+        "group": "quality",
+        "title": "资本配置决策、结果及纠错记录",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "unmet",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      },
+      {
+        "id": "V01",
+        "group": "dcf",
+        "title": "基期经营利润、税与折旧",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "not_required",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      },
+      {
+        "id": "V02",
+        "group": "dcf",
+        "title": "资本开支、营运资本与现金调节",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "not_required",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      },
+      {
+        "id": "V03",
+        "group": "dcf",
+        "title": "经营预测的公开或历史锚点",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "not_required",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      },
+      {
+        "id": "V04",
+        "group": "dcf",
+        "title": "折现率参考依据",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "not_required",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      },
+      {
+        "id": "V05",
+        "group": "dcf",
+        "title": "长期经营及终值假设的对照依据",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "not_required",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      },
+      {
+        "id": "V06",
+        "group": "dcf",
+        "title": "现金、债务与其他索取权",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "not_required",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      },
+      {
+        "id": "V07",
+        "group": "dcf",
+        "title": "非经营资产归属及限制",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "not_required",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      },
+      {
+        "id": "V08",
+        "group": "dcf",
+        "title": "普通股、摊薄及经济权利分母",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "not_required",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      },
+      {
+        "id": "C01",
+        "group": "comparison",
+        "title": "价格、日期、币种与报价单位",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "not_required",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      },
+      {
+        "id": "C02",
+        "group": "comparison",
+        "title": "普通股与ADS对应关系",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "not_required",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      },
+      {
+        "id": "C03",
+        "group": "comparison",
+        "title": "币种桥及适用汇率",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "not_required",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      },
+      {
+        "id": "C04",
+        "group": "comparison",
+        "title": "分红、拆并股及其他证券单位变化",
+        "weight": 1,
+        "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot.",
+        "evidence_ids": [],
+        "satisfied": false,
+        "window_status": "not_required",
+        "window_missing_periods": [],
+        "failure_reason": "missing, ineligible, contradictory, or unmet observation-window evidence"
+      }
+    ],
+    "document_availability": {
+      "available": 1,
+      "declared_fact_sources": 1
+    },
+    "modules": {
+      "quality": {
+        "satisfied": 0,
+        "declared": 15
+      },
+      "dcf": {
+        "satisfied": 0,
+        "declared": 8
+      },
+      "comparison": {
+        "satisfied": 0,
+        "declared": 4
+      }
+    }
+  },
+  "uncertainty": {
+    "unresolved_contradictions": [],
+    "ineligible_facts": [
+      {
+        "id": "apple.q4.revenue",
+        "reasons": [
+          "UNKNOWN_PUBLISHED_AT",
+          "UNKNOWN_VINTAGE_AT",
+          "UNKNOWN_PERIOD_START"
+        ]
+      }
+    ],
+    "assumptions": [],
+    "falsifiers": [
+      {
+        "id": "f1",
+        "metric": "cash_shortfall",
+        "operator": "gt",
+        "threshold": 0,
+        "unit": "currency",
+        "period": "next 12 months",
+        "impact": "revisit resilience analysis",
+        "status": "pending"
+      }
+    ],
+    "hard_risks": [],
+    "notes": [
+      "Partial historical public evidence receipt; not a complete Apple analysis or backtest.",
+      "Publication calendar date is known; exact timestamp and revision timestamp are deliberately not fabricated."
+    ]
+  },
+  "evidence_receipt": [
+    {
+      "id": "apple.q4.revenue",
+      "metric": "quarterly_revenue",
+      "kind": "actual",
+      "value": 89500,
+      "unit": "million_currency",
+      "currency": "USD",
+      "period": {
+        "start": null,
+        "end": "2023-09-30",
+        "frequency": "quarterly"
+      },
+      "periods_observed": [],
+      "financial_definition": null,
+      "observed_at": "2023-11-03T23:59:59Z",
+      "published_at": null,
+      "vintage_at": null,
+      "evidence_kind": "reported",
+      "source": {
+        "id": "apple.newsroom.20231102",
+        "uri": "https://www.apple.com/newsroom/2023/11/apple-reports-fourth-quarter-results/",
+        "locator": "2023-11-02 press release: September quarter revenue $89.5 billion; period start not asserted by this limited source",
+        "visibility": "public",
+        "available": true,
+        "published_date": "2023-11-02"
+      }
+    }
+  ],
+  "capabilities": {
+    "network": false,
+    "send": false,
+    "trade": false,
+    "execute_source_text": false
+  },
+  "operation_status": "computed"
+}

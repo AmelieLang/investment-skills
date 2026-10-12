@@ -1,0 +1,2314 @@
+{
+  "schema_version": "offline-alpha-dawn/v1.1",
+  "operation": "compute",
+  "case_id": "synthetic-complete",
+  "bot_id": "alpha-dawn-framework",
+  "cutoff_at": "2026-10-12T12:00:00Z",
+  "valuation_date": "2026-10-12",
+  "evaluated_at": "2026-10-12T20:00:17.332296Z",
+  "facts": [
+    {
+      "id": "e.Q01",
+      "metric": "e.Q01",
+      "kind": "actual",
+      "value": "Synthetic: paid repeat demand across FY2023-FY2025 and latest interim; no one-off subsidy dependence.",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [
+        {
+          "start": "2023-01-01",
+          "end": "2023-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2024-01-01",
+          "end": "2024-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2026-01-01",
+          "end": "2026-09-30",
+          "frequency": "interim"
+        }
+      ],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.e.Q01",
+        "uri": "synthetic:e.Q01",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "e.Q02",
+      "metric": "e.Q02",
+      "kind": "actual",
+      "value": "Synthetic: normalized operating profitability is positive, with repeat profitable units. Economics positive anchors 2 and 3 both hold.",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [
+        {
+          "start": "2023-01-01",
+          "end": "2023-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2024-01-01",
+          "end": "2024-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2026-01-01",
+          "end": "2026-09-30",
+          "frequency": "interim"
+        }
+      ],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.e.Q02",
+        "uri": "synthetic:e.Q02",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "e.Q03",
+      "metric": "e.Q03",
+      "kind": "actual",
+      "value": "Synthetic: three annual periods and latest interim confirm repeated profitability; no observed adverse historical period is supplied.",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [
+        {
+          "start": "2023-01-01",
+          "end": "2023-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2024-01-01",
+          "end": "2024-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2026-01-01",
+          "end": "2026-09-30",
+          "frequency": "interim"
+        }
+      ],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.e.Q03",
+        "uri": "synthetic:e.Q03",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "e.Q04",
+      "metric": "e.Q04",
+      "kind": "actual",
+      "value": "Synthetic evidence for 份额、定价与销量变化",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [
+        {
+          "start": "2023-01-01",
+          "end": "2023-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2024-01-01",
+          "end": "2024-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2026-01-01",
+          "end": "2026-09-30",
+          "frequency": "interim"
+        }
+      ],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.e.Q04",
+        "uri": "synthetic:e.Q04",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "e.Q05",
+      "metric": "e.Q05",
+      "kind": "actual",
+      "value": "Synthetic evidence for 成本、转换成本、渠道优势的可核依据",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [
+        {
+          "start": "2023-01-01",
+          "end": "2023-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2024-01-01",
+          "end": "2024-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2026-01-01",
+          "end": "2026-09-30",
+          "frequency": "interim"
+        }
+      ],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.e.Q05",
+        "uri": "synthetic:e.Q05",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "e.Q06",
+      "metric": "e.Q06",
+      "kind": "actual",
+      "value": "Synthetic evidence for 竞争压力及公司应对结果",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [
+        {
+          "start": "2023-01-01",
+          "end": "2023-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2024-01-01",
+          "end": "2024-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2026-01-01",
+          "end": "2026-09-30",
+          "frequency": "interim"
+        }
+      ],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.e.Q06",
+        "uri": "synthetic:e.Q06",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "e.Q07",
+      "metric": "e.Q07",
+      "kind": "actual",
+      "value": "Synthetic evidence for 利润到经营现金再到再投资后现金的调节",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [
+        {
+          "start": "2023-01-01",
+          "end": "2023-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2024-01-01",
+          "end": "2024-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2026-01-01",
+          "end": "2026-09-30",
+          "frequency": "interim"
+        }
+      ],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.e.Q07",
+        "uri": "synthetic:e.Q07",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "e.Q08",
+      "metric": "e.Q08",
+      "kind": "actual",
+      "value": "Synthetic evidence for 投入资本、回报与资本成本比较依据",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [
+        {
+          "start": "2023-01-01",
+          "end": "2023-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2024-01-01",
+          "end": "2024-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2026-01-01",
+          "end": "2026-09-30",
+          "frequency": "interim"
+        }
+      ],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.e.Q08",
+        "uri": "synthetic:e.Q08",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "e.Q09",
+      "metric": "e.Q09",
+      "kind": "actual",
+      "value": "Synthetic evidence for 再投资、回购、稀释对每股现金的影响",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [
+        {
+          "start": "2023-01-01",
+          "end": "2023-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2024-01-01",
+          "end": "2024-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2026-01-01",
+          "end": "2026-09-30",
+          "frequency": "interim"
+        }
+      ],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.e.Q09",
+        "uri": "synthetic:e.Q09",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "e.Q10",
+      "metric": "e.Q10",
+      "kind": "actual",
+      "value": "Synthetic evidence for 债务、到期结构与契约义务",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [
+        {
+          "start": "2023-01-01",
+          "end": "2023-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2024-01-01",
+          "end": "2024-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2026-01-01",
+          "end": "2026-09-30",
+          "frequency": "interim"
+        }
+      ],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.e.Q10",
+        "uri": "synthetic:e.Q10",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "e.Q11",
+      "metric": "e.Q11",
+      "kind": "actual",
+      "value": "Synthetic evidence for 可用现金、受限资金与现金消耗",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [
+        {
+          "start": "2023-01-01",
+          "end": "2023-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2024-01-01",
+          "end": "2024-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2026-01-01",
+          "end": "2026-09-30",
+          "frequency": "interim"
+        }
+      ],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.e.Q11",
+        "uri": "synthetic:e.Q11",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "e.Q12",
+      "metric": "e.Q12",
+      "kind": "actual",
+      "value": "Synthetic evidence for 基准及压力情景资金桥与假设",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "hypothetical",
+      "source": {
+        "id": "synth.e.Q12",
+        "uri": "synthetic:e.Q12",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "e.Q13",
+      "metric": "e.Q13",
+      "kind": "actual",
+      "value": "Synthetic evidence for 控制权、激励与关联交易",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [
+        {
+          "start": "2023-01-01",
+          "end": "2023-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2024-01-01",
+          "end": "2024-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2026-01-01",
+          "end": "2026-09-30",
+          "frequency": "interim"
+        }
+      ],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.e.Q13",
+        "uri": "synthetic:e.Q13",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "e.Q14",
+      "metric": "e.Q14",
+      "kind": "actual",
+      "value": "Synthetic evidence for 审计、重述及重大诚信争议",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [
+        {
+          "start": "2023-01-01",
+          "end": "2023-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2024-01-01",
+          "end": "2024-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2026-01-01",
+          "end": "2026-09-30",
+          "frequency": "interim"
+        }
+      ],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.e.Q14",
+        "uri": "synthetic:e.Q14",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "e.Q15",
+      "metric": "e.Q15",
+      "kind": "actual",
+      "value": "Synthetic evidence for 资本配置决策、结果及纠错记录",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [
+        {
+          "start": "2023-01-01",
+          "end": "2023-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2024-01-01",
+          "end": "2024-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "frequency": "annual"
+        },
+        {
+          "start": "2026-01-01",
+          "end": "2026-09-30",
+          "frequency": "interim"
+        }
+      ],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.e.Q15",
+        "uri": "synthetic:e.Q15",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "e.V01",
+      "metric": "e.V01",
+      "kind": "actual",
+      "value": "Synthetic evidence for 基期经营利润、税与折旧",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.e.V01",
+        "uri": "synthetic:e.V01",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "e.V02",
+      "metric": "e.V02",
+      "kind": "actual",
+      "value": "Synthetic evidence for 资本开支、营运资本与现金调节",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.e.V02",
+        "uri": "synthetic:e.V02",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "e.V03",
+      "metric": "e.V03",
+      "kind": "actual",
+      "value": "Synthetic evidence for 经营预测的公开或历史锚点",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.e.V03",
+        "uri": "synthetic:e.V03",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "e.V04",
+      "metric": "e.V04",
+      "kind": "actual",
+      "value": "Synthetic evidence for 折现率参考依据",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.e.V04",
+        "uri": "synthetic:e.V04",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "e.V05",
+      "metric": "e.V05",
+      "kind": "actual",
+      "value": "Synthetic evidence for 长期经营及终值假设的对照依据",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.e.V05",
+        "uri": "synthetic:e.V05",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "e.V06",
+      "metric": "e.V06",
+      "kind": "actual",
+      "value": "Synthetic evidence for 现金、债务与其他索取权",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.e.V06",
+        "uri": "synthetic:e.V06",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "e.V07",
+      "metric": "e.V07",
+      "kind": "actual",
+      "value": "Synthetic evidence for 非经营资产归属及限制",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.e.V07",
+        "uri": "synthetic:e.V07",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "e.V08",
+      "metric": "e.V08",
+      "kind": "actual",
+      "value": "Synthetic evidence for 普通股、摊薄及经济权利分母",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.e.V08",
+        "uri": "synthetic:e.V08",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "e.C01",
+      "metric": "e.C01",
+      "kind": "actual",
+      "value": "Synthetic evidence for 价格、日期、币种与报价单位",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.e.C01",
+        "uri": "synthetic:e.C01",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "e.C02",
+      "metric": "e.C02",
+      "kind": "actual",
+      "value": "Synthetic evidence for 普通股与ADS对应关系",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.e.C02",
+        "uri": "synthetic:e.C02",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "e.C03",
+      "metric": "e.C03",
+      "kind": "actual",
+      "value": "Synthetic evidence for 币种桥及适用汇率",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.e.C03",
+        "uri": "synthetic:e.C03",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "e.C04",
+      "metric": "e.C04",
+      "kind": "actual",
+      "value": "Synthetic evidence for 分红、拆并股及其他证券单位变化",
+      "unit": "text",
+      "currency": null,
+      "period": {
+        "start": "2023-01-01",
+        "end": "2026-09-30",
+        "frequency": "multi_year"
+      },
+      "periods_observed": [],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.e.C04",
+        "uri": "synthetic:e.C04",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "shares",
+      "metric": "shares",
+      "kind": "actual",
+      "value": 100000000,
+      "unit": "ordinary_shares",
+      "currency": null,
+      "period": {
+        "start": "2026-10-12",
+        "end": "2026-10-12",
+        "frequency": "instant"
+      },
+      "periods_observed": [],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.shares",
+        "uri": "synthetic:shares",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "ratio",
+      "metric": "ratio",
+      "kind": "actual",
+      "value": 8,
+      "unit": "ordinary_per_quote_unit",
+      "currency": null,
+      "period": {
+        "start": "2026-10-12",
+        "end": "2026-10-12",
+        "frequency": "instant"
+      },
+      "periods_observed": [],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.ratio",
+        "uri": "synthetic:ratio",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "price",
+      "metric": "price_ADS",
+      "kind": "actual",
+      "value": 8,
+      "unit": "currency_per_quote_unit",
+      "currency": "USD",
+      "period": {
+        "start": "2026-10-12",
+        "end": "2026-10-12",
+        "frequency": "instant"
+      },
+      "periods_observed": [],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.price",
+        "uri": "synthetic:price",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "fx",
+      "metric": "fx_spot",
+      "kind": "actual",
+      "value": 0.1388888888888889,
+      "unit": "USD_per_CNY",
+      "currency": null,
+      "period": {
+        "start": "2026-10-12",
+        "end": "2026-10-12",
+        "frequency": "instant"
+      },
+      "periods_observed": [],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.fx",
+        "uri": "synthetic:fx",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "claim.cash",
+      "metric": "claim.cash",
+      "kind": "actual",
+      "value": 100,
+      "unit": "million_currency",
+      "currency": "CNY",
+      "period": {
+        "start": "2026-10-12",
+        "end": "2026-10-12",
+        "frequency": "instant"
+      },
+      "periods_observed": [],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.claim.cash",
+        "uri": "synthetic:claim.cash",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "claim.non_operating_assets",
+      "metric": "claim.non_operating_assets",
+      "kind": "actual",
+      "value": 0,
+      "unit": "million_currency",
+      "currency": "CNY",
+      "period": {
+        "start": "2026-10-12",
+        "end": "2026-10-12",
+        "frequency": "instant"
+      },
+      "periods_observed": [],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.claim.non_operating_assets",
+        "uri": "synthetic:claim.non_operating_assets",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "claim.gross_debt",
+      "metric": "claim.gross_debt",
+      "kind": "actual",
+      "value": 200,
+      "unit": "million_currency",
+      "currency": "CNY",
+      "period": {
+        "start": "2026-10-12",
+        "end": "2026-10-12",
+        "frequency": "instant"
+      },
+      "periods_observed": [],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.claim.gross_debt",
+        "uri": "synthetic:claim.gross_debt",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "claim.lease_liabilities",
+      "metric": "claim.lease_liabilities",
+      "kind": "actual",
+      "value": 0,
+      "unit": "million_currency",
+      "currency": "CNY",
+      "period": {
+        "start": "2026-10-12",
+        "end": "2026-10-12",
+        "frequency": "instant"
+      },
+      "periods_observed": [],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.claim.lease_liabilities",
+        "uri": "synthetic:claim.lease_liabilities",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "claim.preferred",
+      "metric": "claim.preferred",
+      "kind": "actual",
+      "value": 0,
+      "unit": "million_currency",
+      "currency": "CNY",
+      "period": {
+        "start": "2026-10-12",
+        "end": "2026-10-12",
+        "frequency": "instant"
+      },
+      "periods_observed": [],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.claim.preferred",
+        "uri": "synthetic:claim.preferred",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "claim.noncontrolling_interest",
+      "metric": "claim.noncontrolling_interest",
+      "kind": "actual",
+      "value": 0,
+      "unit": "million_currency",
+      "currency": "CNY",
+      "period": {
+        "start": "2026-10-12",
+        "end": "2026-10-12",
+        "frequency": "instant"
+      },
+      "periods_observed": [],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.claim.noncontrolling_interest",
+        "uri": "synthetic:claim.noncontrolling_interest",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    },
+    {
+      "id": "claim.other_claims",
+      "metric": "claim.other_claims",
+      "kind": "actual",
+      "value": 0,
+      "unit": "million_currency",
+      "currency": "CNY",
+      "period": {
+        "start": "2026-10-12",
+        "end": "2026-10-12",
+        "frequency": "instant"
+      },
+      "periods_observed": [],
+      "financial_definition": null,
+      "observed_at": "2026-10-12T12:00:00Z",
+      "published_at": "2026-10-12T12:00:00Z",
+      "vintage_at": "2026-10-12T12:00:00Z",
+      "evidence_kind": "historical",
+      "source": {
+        "id": "synth.claim.other_claims",
+        "uri": "synthetic:claim.other_claims",
+        "locator": "Synthetic test fixture, not a real issuer claim",
+        "visibility": "synthetic",
+        "available": true,
+        "published_date": "2026-10-12"
+      }
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "bear.ebit",
+      "value": 90,
+      "unit": "million_currency",
+      "currency": "CNY",
+      "scenario": "bear",
+      "author": "synthetic fixture",
+      "rationale": "Explicit synthetic future-period assumption; not historical fact",
+      "supporting_fact_ids": [
+        "e.V03"
+      ],
+      "period": {
+        "start": "2026-10-13",
+        "end": "2027-10-12",
+        "frequency": "annual"
+      },
+      "assumption_type": "forecast",
+      "financial_definition": "operating_ebit"
+    },
+    {
+      "id": "bear.tax",
+      "value": 0.2,
+      "unit": "fraction",
+      "currency": null,
+      "scenario": "bear",
+      "author": "synthetic fixture",
+      "rationale": "Explicit synthetic future-period assumption; not historical fact",
+      "supporting_fact_ids": [
+        "e.V03"
+      ],
+      "period": {
+        "start": "2026-10-13",
+        "end": "2027-10-12",
+        "frequency": "annual"
+      },
+      "assumption_type": "forecast",
+      "financial_definition": "effective_cash_tax_rate"
+    },
+    {
+      "id": "bear.da",
+      "value": 10,
+      "unit": "million_currency",
+      "currency": "CNY",
+      "scenario": "bear",
+      "author": "synthetic fixture",
+      "rationale": "Explicit synthetic future-period assumption; not historical fact",
+      "supporting_fact_ids": [
+        "e.V03"
+      ],
+      "period": {
+        "start": "2026-10-13",
+        "end": "2027-10-12",
+        "frequency": "annual"
+      },
+      "assumption_type": "forecast",
+      "financial_definition": "noncash_da"
+    },
+    {
+      "id": "bear.capex",
+      "value": 15,
+      "unit": "million_currency",
+      "currency": "CNY",
+      "scenario": "bear",
+      "author": "synthetic fixture",
+      "rationale": "Explicit synthetic future-period assumption; not historical fact",
+      "supporting_fact_ids": [
+        "e.V03"
+      ],
+      "period": {
+        "start": "2026-10-13",
+        "end": "2027-10-12",
+        "frequency": "annual"
+      },
+      "assumption_type": "forecast",
+      "financial_definition": "capital_expenditure"
+    },
+    {
+      "id": "bear.nwc",
+      "value": 5,
+      "unit": "million_currency",
+      "currency": "CNY",
+      "scenario": "bear",
+      "author": "synthetic fixture",
+      "rationale": "Explicit synthetic future-period assumption; not historical fact",
+      "supporting_fact_ids": [
+        "e.V03"
+      ],
+      "period": {
+        "start": "2026-10-13",
+        "end": "2027-10-12",
+        "frequency": "annual"
+      },
+      "assumption_type": "forecast",
+      "financial_definition": "change_in_operating_nwc"
+    },
+    {
+      "id": "bear.wacc",
+      "value": 0.1,
+      "unit": "annual_fraction",
+      "currency": null,
+      "scenario": "bear",
+      "author": "synthetic fixture",
+      "rationale": "Explicit synthetic future-period assumption; not historical fact",
+      "supporting_fact_ids": [
+        "e.V03"
+      ],
+      "period": null,
+      "assumption_type": "parameter",
+      "financial_definition": "discount_rate"
+    },
+    {
+      "id": "bear.g",
+      "value": 0.02,
+      "unit": "annual_fraction",
+      "currency": null,
+      "scenario": "bear",
+      "author": "synthetic fixture",
+      "rationale": "Explicit synthetic future-period assumption; not historical fact",
+      "supporting_fact_ids": [
+        "e.V03"
+      ],
+      "period": null,
+      "assumption_type": "parameter",
+      "financial_definition": "terminal_growth"
+    },
+    {
+      "id": "base.ebit",
+      "value": 110,
+      "unit": "million_currency",
+      "currency": "CNY",
+      "scenario": "base",
+      "author": "synthetic fixture",
+      "rationale": "Explicit synthetic future-period assumption; not historical fact",
+      "supporting_fact_ids": [
+        "e.V03"
+      ],
+      "period": {
+        "start": "2026-10-13",
+        "end": "2027-10-12",
+        "frequency": "annual"
+      },
+      "assumption_type": "forecast",
+      "financial_definition": "operating_ebit"
+    },
+    {
+      "id": "base.tax",
+      "value": 0.2,
+      "unit": "fraction",
+      "currency": null,
+      "scenario": "base",
+      "author": "synthetic fixture",
+      "rationale": "Explicit synthetic future-period assumption; not historical fact",
+      "supporting_fact_ids": [
+        "e.V03"
+      ],
+      "period": {
+        "start": "2026-10-13",
+        "end": "2027-10-12",
+        "frequency": "annual"
+      },
+      "assumption_type": "forecast",
+      "financial_definition": "effective_cash_tax_rate"
+    },
+    {
+      "id": "base.da",
+      "value": 10,
+      "unit": "million_currency",
+      "currency": "CNY",
+      "scenario": "base",
+      "author": "synthetic fixture",
+      "rationale": "Explicit synthetic future-period assumption; not historical fact",
+      "supporting_fact_ids": [
+        "e.V03"
+      ],
+      "period": {
+        "start": "2026-10-13",
+        "end": "2027-10-12",
+        "frequency": "annual"
+      },
+      "assumption_type": "forecast",
+      "financial_definition": "noncash_da"
+    },
+    {
+      "id": "base.capex",
+      "value": 15,
+      "unit": "million_currency",
+      "currency": "CNY",
+      "scenario": "base",
+      "author": "synthetic fixture",
+      "rationale": "Explicit synthetic future-period assumption; not historical fact",
+      "supporting_fact_ids": [
+        "e.V03"
+      ],
+      "period": {
+        "start": "2026-10-13",
+        "end": "2027-10-12",
+        "frequency": "annual"
+      },
+      "assumption_type": "forecast",
+      "financial_definition": "capital_expenditure"
+    },
+    {
+      "id": "base.nwc",
+      "value": 5,
+      "unit": "million_currency",
+      "currency": "CNY",
+      "scenario": "base",
+      "author": "synthetic fixture",
+      "rationale": "Explicit synthetic future-period assumption; not historical fact",
+      "supporting_fact_ids": [
+        "e.V03"
+      ],
+      "period": {
+        "start": "2026-10-13",
+        "end": "2027-10-12",
+        "frequency": "annual"
+      },
+      "assumption_type": "forecast",
+      "financial_definition": "change_in_operating_nwc"
+    },
+    {
+      "id": "base.wacc",
+      "value": 0.1,
+      "unit": "annual_fraction",
+      "currency": null,
+      "scenario": "base",
+      "author": "synthetic fixture",
+      "rationale": "Explicit synthetic future-period assumption; not historical fact",
+      "supporting_fact_ids": [
+        "e.V03"
+      ],
+      "period": null,
+      "assumption_type": "parameter",
+      "financial_definition": "discount_rate"
+    },
+    {
+      "id": "base.g",
+      "value": 0.02,
+      "unit": "annual_fraction",
+      "currency": null,
+      "scenario": "base",
+      "author": "synthetic fixture",
+      "rationale": "Explicit synthetic future-period assumption; not historical fact",
+      "supporting_fact_ids": [
+        "e.V03"
+      ],
+      "period": null,
+      "assumption_type": "parameter",
+      "financial_definition": "terminal_growth"
+    },
+    {
+      "id": "bull.ebit",
+      "value": 130,
+      "unit": "million_currency",
+      "currency": "CNY",
+      "scenario": "bull",
+      "author": "synthetic fixture",
+      "rationale": "Explicit synthetic future-period assumption; not historical fact",
+      "supporting_fact_ids": [
+        "e.V03"
+      ],
+      "period": {
+        "start": "2026-10-13",
+        "end": "2027-10-12",
+        "frequency": "annual"
+      },
+      "assumption_type": "forecast",
+      "financial_definition": "operating_ebit"
+    },
+    {
+      "id": "bull.tax",
+      "value": 0.2,
+      "unit": "fraction",
+      "currency": null,
+      "scenario": "bull",
+      "author": "synthetic fixture",
+      "rationale": "Explicit synthetic future-period assumption; not historical fact",
+      "supporting_fact_ids": [
+        "e.V03"
+      ],
+      "period": {
+        "start": "2026-10-13",
+        "end": "2027-10-12",
+        "frequency": "annual"
+      },
+      "assumption_type": "forecast",
+      "financial_definition": "effective_cash_tax_rate"
+    },
+    {
+      "id": "bull.da",
+      "value": 10,
+      "unit": "million_currency",
+      "currency": "CNY",
+      "scenario": "bull",
+      "author": "synthetic fixture",
+      "rationale": "Explicit synthetic future-period assumption; not historical fact",
+      "supporting_fact_ids": [
+        "e.V03"
+      ],
+      "period": {
+        "start": "2026-10-13",
+        "end": "2027-10-12",
+        "frequency": "annual"
+      },
+      "assumption_type": "forecast",
+      "financial_definition": "noncash_da"
+    },
+    {
+      "id": "bull.capex",
+      "value": 15,
+      "unit": "million_currency",
+      "currency": "CNY",
+      "scenario": "bull",
+      "author": "synthetic fixture",
+      "rationale": "Explicit synthetic future-period assumption; not historical fact",
+      "supporting_fact_ids": [
+        "e.V03"
+      ],
+      "period": {
+        "start": "2026-10-13",
+        "end": "2027-10-12",
+        "frequency": "annual"
+      },
+      "assumption_type": "forecast",
+      "financial_definition": "capital_expenditure"
+    },
+    {
+      "id": "bull.nwc",
+      "value": 5,
+      "unit": "million_currency",
+      "currency": "CNY",
+      "scenario": "bull",
+      "author": "synthetic fixture",
+      "rationale": "Explicit synthetic future-period assumption; not historical fact",
+      "supporting_fact_ids": [
+        "e.V03"
+      ],
+      "period": {
+        "start": "2026-10-13",
+        "end": "2027-10-12",
+        "frequency": "annual"
+      },
+      "assumption_type": "forecast",
+      "financial_definition": "change_in_operating_nwc"
+    },
+    {
+      "id": "bull.wacc",
+      "value": 0.1,
+      "unit": "annual_fraction",
+      "currency": null,
+      "scenario": "bull",
+      "author": "synthetic fixture",
+      "rationale": "Explicit synthetic future-period assumption; not historical fact",
+      "supporting_fact_ids": [
+        "e.V03"
+      ],
+      "period": null,
+      "assumption_type": "parameter",
+      "financial_definition": "discount_rate"
+    },
+    {
+      "id": "bull.g",
+      "value": 0.02,
+      "unit": "annual_fraction",
+      "currency": null,
+      "scenario": "bull",
+      "author": "synthetic fixture",
+      "rationale": "Explicit synthetic future-period assumption; not historical fact",
+      "supporting_fact_ids": [
+        "e.V03"
+      ],
+      "period": null,
+      "assumption_type": "parameter",
+      "financial_definition": "terminal_growth"
+    }
+  ],
+  "requirement_evidence": {
+    "Q01": [
+      "e.Q01"
+    ],
+    "Q02": [
+      "e.Q02"
+    ],
+    "Q03": [
+      "e.Q03"
+    ],
+    "Q04": [
+      "e.Q04"
+    ],
+    "Q05": [
+      "e.Q05"
+    ],
+    "Q06": [
+      "e.Q06"
+    ],
+    "Q07": [
+      "e.Q07"
+    ],
+    "Q08": [
+      "e.Q08"
+    ],
+    "Q09": [
+      "e.Q09"
+    ],
+    "Q10": [
+      "e.Q10"
+    ],
+    "Q11": [
+      "e.Q11"
+    ],
+    "Q12": [
+      "e.Q12"
+    ],
+    "Q13": [
+      "e.Q13"
+    ],
+    "Q14": [
+      "e.Q14"
+    ],
+    "Q15": [
+      "e.Q15"
+    ],
+    "V01": [
+      "e.V01"
+    ],
+    "V02": [
+      "e.V02"
+    ],
+    "V03": [
+      "e.V03"
+    ],
+    "V04": [
+      "e.V04"
+    ],
+    "V05": [
+      "e.V05"
+    ],
+    "V06": [
+      "e.V06"
+    ],
+    "V07": [
+      "e.V07"
+    ],
+    "V08": [
+      "e.V08"
+    ],
+    "C01": [
+      "e.C01"
+    ],
+    "C02": [
+      "e.C02"
+    ],
+    "C03": [
+      "e.C03"
+    ],
+    "C04": [
+      "e.C04"
+    ]
+  },
+  "quality_window": {
+    "policy_id": "latest_three_fiscal_years_plus_latest_interim/v1",
+    "mode": "default",
+    "frozen_at": "2026-10-12T20:00:17.332296Z",
+    "override_reason": "",
+    "fiscal_years": [
+      {
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "frequency": "annual"
+      },
+      {
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "frequency": "annual"
+      },
+      {
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "frequency": "annual"
+      }
+    ],
+    "latest_interim": {
+      "start": "2026-01-01",
+      "end": "2026-09-30",
+      "frequency": "interim"
+    },
+    "calendar_basis_fact_ids": [
+      "e.Q03"
+    ]
+  },
+  "quality_assessments": [
+    {
+      "id": "economics",
+      "judge": "synthetic analyst fixture, not a native framework score",
+      "anchor_reviews": [
+        {
+          "level": 0,
+          "status": "refuted",
+          "evidence_ids": [
+            "e.Q01",
+            "e.Q02",
+            "e.Q03"
+          ],
+          "counter_evidence_ids": [],
+          "rationale": "Synthetic band assessment: no real-company judgment"
+        },
+        {
+          "level": 1,
+          "status": "refuted",
+          "evidence_ids": [
+            "e.Q01",
+            "e.Q02",
+            "e.Q03"
+          ],
+          "counter_evidence_ids": [],
+          "rationale": "Synthetic band assessment: no real-company judgment"
+        },
+        {
+          "level": 2,
+          "status": "supported",
+          "evidence_ids": [
+            "e.Q01",
+            "e.Q02",
+            "e.Q03"
+          ],
+          "counter_evidence_ids": [],
+          "rationale": "Synthetic band assessment: no real-company judgment"
+        },
+        {
+          "level": 3,
+          "status": "supported",
+          "evidence_ids": [
+            "e.Q01",
+            "e.Q02",
+            "e.Q03"
+          ],
+          "counter_evidence_ids": [],
+          "rationale": "Synthetic band assessment: no real-company judgment"
+        },
+        {
+          "level": 4,
+          "status": "unknown",
+          "evidence_ids": [],
+          "counter_evidence_ids": [],
+          "rationale": "Synthetic band assessment: no real-company judgment"
+        }
+      ]
+    },
+    {
+      "id": "moat",
+      "judge": "synthetic analyst fixture, not a native framework score",
+      "anchor_reviews": [
+        {
+          "level": 0,
+          "status": "refuted",
+          "evidence_ids": [
+            "e.Q04",
+            "e.Q05",
+            "e.Q06"
+          ],
+          "counter_evidence_ids": [],
+          "rationale": "Synthetic band assessment: no real-company judgment"
+        },
+        {
+          "level": 1,
+          "status": "refuted",
+          "evidence_ids": [
+            "e.Q04",
+            "e.Q05",
+            "e.Q06"
+          ],
+          "counter_evidence_ids": [],
+          "rationale": "Synthetic band assessment: no real-company judgment"
+        },
+        {
+          "level": 2,
+          "status": "supported",
+          "evidence_ids": [
+            "e.Q04",
+            "e.Q05",
+            "e.Q06"
+          ],
+          "counter_evidence_ids": [],
+          "rationale": "Synthetic band assessment: no real-company judgment"
+        },
+        {
+          "level": 3,
+          "status": "supported",
+          "evidence_ids": [
+            "e.Q04",
+            "e.Q05",
+            "e.Q06"
+          ],
+          "counter_evidence_ids": [],
+          "rationale": "Synthetic band assessment: no real-company judgment"
+        },
+        {
+          "level": 4,
+          "status": "unknown",
+          "evidence_ids": [],
+          "counter_evidence_ids": [],
+          "rationale": "Synthetic band assessment: no real-company judgment"
+        }
+      ]
+    },
+    {
+      "id": "capital",
+      "judge": "synthetic analyst fixture, not a native framework score",
+      "anchor_reviews": [
+        {
+          "level": 0,
+          "status": "refuted",
+          "evidence_ids": [
+            "e.Q07",
+            "e.Q08",
+            "e.Q09"
+          ],
+          "counter_evidence_ids": [],
+          "rationale": "Synthetic band assessment: no real-company judgment"
+        },
+        {
+          "level": 1,
+          "status": "refuted",
+          "evidence_ids": [
+            "e.Q07",
+            "e.Q08",
+            "e.Q09"
+          ],
+          "counter_evidence_ids": [],
+          "rationale": "Synthetic band assessment: no real-company judgment"
+        },
+        {
+          "level": 2,
+          "status": "supported",
+          "evidence_ids": [
+            "e.Q07",
+            "e.Q08",
+            "e.Q09"
+          ],
+          "counter_evidence_ids": [],
+          "rationale": "Synthetic band assessment: no real-company judgment"
+        },
+        {
+          "level": 3,
+          "status": "supported",
+          "evidence_ids": [
+            "e.Q07",
+            "e.Q08",
+            "e.Q09"
+          ],
+          "counter_evidence_ids": [],
+          "rationale": "Synthetic band assessment: no real-company judgment"
+        },
+        {
+          "level": 4,
+          "status": "unknown",
+          "evidence_ids": [],
+          "counter_evidence_ids": [],
+          "rationale": "Synthetic band assessment: no real-company judgment"
+        }
+      ]
+    },
+    {
+      "id": "resilience",
+      "judge": "synthetic analyst fixture, not a native framework score",
+      "anchor_reviews": [
+        {
+          "level": 0,
+          "status": "refuted",
+          "evidence_ids": [
+            "e.Q10",
+            "e.Q11",
+            "e.Q12"
+          ],
+          "counter_evidence_ids": [],
+          "rationale": "Synthetic band assessment: no real-company judgment"
+        },
+        {
+          "level": 1,
+          "status": "refuted",
+          "evidence_ids": [
+            "e.Q10",
+            "e.Q11",
+            "e.Q12"
+          ],
+          "counter_evidence_ids": [],
+          "rationale": "Synthetic band assessment: no real-company judgment"
+        },
+        {
+          "level": 2,
+          "status": "supported",
+          "evidence_ids": [
+            "e.Q10",
+            "e.Q11",
+            "e.Q12"
+          ],
+          "counter_evidence_ids": [],
+          "rationale": "Synthetic band assessment: no real-company judgment"
+        },
+        {
+          "level": 3,
+          "status": "supported",
+          "evidence_ids": [
+            "e.Q10",
+            "e.Q11",
+            "e.Q12"
+          ],
+          "counter_evidence_ids": [],
+          "rationale": "Synthetic band assessment: no real-company judgment"
+        },
+        {
+          "level": 4,
+          "status": "unknown",
+          "evidence_ids": [],
+          "counter_evidence_ids": [],
+          "rationale": "Synthetic band assessment: no real-company judgment"
+        }
+      ]
+    },
+    {
+      "id": "governance",
+      "judge": "synthetic analyst fixture, not a native framework score",
+      "anchor_reviews": [
+        {
+          "level": 0,
+          "status": "refuted",
+          "evidence_ids": [
+            "e.Q13",
+            "e.Q14",
+            "e.Q15"
+          ],
+          "counter_evidence_ids": [],
+          "rationale": "Synthetic band assessment: no real-company judgment"
+        },
+        {
+          "level": 1,
+          "status": "refuted",
+          "evidence_ids": [
+            "e.Q13",
+            "e.Q14",
+            "e.Q15"
+          ],
+          "counter_evidence_ids": [],
+          "rationale": "Synthetic band assessment: no real-company judgment"
+        },
+        {
+          "level": 2,
+          "status": "supported",
+          "evidence_ids": [
+            "e.Q13",
+            "e.Q14",
+            "e.Q15"
+          ],
+          "counter_evidence_ids": [],
+          "rationale": "Synthetic band assessment: no real-company judgment"
+        },
+        {
+          "level": 3,
+          "status": "supported",
+          "evidence_ids": [
+            "e.Q13",
+            "e.Q14",
+            "e.Q15"
+          ],
+          "counter_evidence_ids": [],
+          "rationale": "Synthetic band assessment: no real-company judgment"
+        },
+        {
+          "level": 4,
+          "status": "unknown",
+          "evidence_ids": [],
+          "counter_evidence_ids": [],
+          "rationale": "Synthetic band assessment: no real-company judgment"
+        }
+      ]
+    }
+  ],
+  "contradictions": [],
+  "hard_risks": [],
+  "falsifiers": [
+    {
+      "id": "f1",
+      "metric": "cash_shortfall",
+      "operator": "gt",
+      "threshold": 0,
+      "unit": "currency",
+      "period": "next 12 months",
+      "impact": "revisit resilience analysis",
+      "status": "pending"
+    }
+  ],
+  "security": {
+    "listing_id": "SYNTH-ADS",
+    "quote_currency": "USD",
+    "quote_unit": "ADS",
+    "ordinary_shares_ref": {
+      "fact_id": "shares"
+    },
+    "ordinary_per_quote_unit_ref": {
+      "fact_id": "ratio"
+    }
+  },
+  "valuation": {
+    "currency": "CNY",
+    "scenarios": [
+      {
+        "name": "bear",
+        "forecast": [
+          {
+            "cashflow_date": "2027-10-12",
+            "period": {
+              "start": "2026-10-13",
+              "end": "2027-10-12",
+              "frequency": "annual"
+            },
+            "ebit_ref": {
+              "assumption_id": "bear.ebit"
+            },
+            "tax_ref": {
+              "assumption_id": "bear.tax"
+            },
+            "da_ref": {
+              "assumption_id": "bear.da"
+            },
+            "capex_ref": {
+              "assumption_id": "bear.capex"
+            },
+            "nwc_change_ref": {
+              "assumption_id": "bear.nwc"
+            }
+          }
+        ],
+        "wacc_ref": {
+          "assumption_id": "bear.wacc"
+        },
+        "terminal_growth_ref": {
+          "assumption_id": "bear.g"
+        }
+      },
+      {
+        "name": "base",
+        "forecast": [
+          {
+            "cashflow_date": "2027-10-12",
+            "period": {
+              "start": "2026-10-13",
+              "end": "2027-10-12",
+              "frequency": "annual"
+            },
+            "ebit_ref": {
+              "assumption_id": "base.ebit"
+            },
+            "tax_ref": {
+              "assumption_id": "base.tax"
+            },
+            "da_ref": {
+              "assumption_id": "base.da"
+            },
+            "capex_ref": {
+              "assumption_id": "base.capex"
+            },
+            "nwc_change_ref": {
+              "assumption_id": "base.nwc"
+            }
+          }
+        ],
+        "wacc_ref": {
+          "assumption_id": "base.wacc"
+        },
+        "terminal_growth_ref": {
+          "assumption_id": "base.g"
+        }
+      },
+      {
+        "name": "bull",
+        "forecast": [
+          {
+            "cashflow_date": "2027-10-12",
+            "period": {
+              "start": "2026-10-13",
+              "end": "2027-10-12",
+              "frequency": "annual"
+            },
+            "ebit_ref": {
+              "assumption_id": "bull.ebit"
+            },
+            "tax_ref": {
+              "assumption_id": "bull.tax"
+            },
+            "da_ref": {
+              "assumption_id": "bull.da"
+            },
+            "capex_ref": {
+              "assumption_id": "bull.capex"
+            },
+            "nwc_change_ref": {
+              "assumption_id": "bull.nwc"
+            }
+          }
+        ],
+        "wacc_ref": {
+          "assumption_id": "bull.wacc"
+        },
+        "terminal_growth_ref": {
+          "assumption_id": "bull.g"
+        }
+      }
+    ],
+    "bridge": [
+      {
+        "id": "cash",
+        "role": "cash",
+        "amount_ref": {
+          "fact_id": "claim.cash"
+        },
+        "included_in": null
+      },
+      {
+        "id": "non_operating_assets",
+        "role": "non_operating_assets",
+        "amount_ref": {
+          "fact_id": "claim.non_operating_assets"
+        },
+        "included_in": null
+      },
+      {
+        "id": "gross_debt",
+        "role": "gross_debt",
+        "amount_ref": {
+          "fact_id": "claim.gross_debt"
+        },
+        "included_in": null
+      },
+      {
+        "id": "lease_liabilities",
+        "role": "lease_liabilities",
+        "amount_ref": {
+          "fact_id": "claim.lease_liabilities"
+        },
+        "included_in": null
+      },
+      {
+        "id": "preferred",
+        "role": "preferred",
+        "amount_ref": {
+          "fact_id": "claim.preferred"
+        },
+        "included_in": null
+      },
+      {
+        "id": "noncontrolling_interest",
+        "role": "noncontrolling_interest",
+        "amount_ref": {
+          "fact_id": "claim.noncontrolling_interest"
+        },
+        "included_in": null
+      },
+      {
+        "id": "other_claims",
+        "role": "other_claims",
+        "amount_ref": {
+          "fact_id": "claim.other_claims"
+        },
+        "included_in": null
+      }
+    ],
+    "price_ref": {
+      "fact_id": "price"
+    },
+    "fx_ref": {
+      "fact_id": "fx"
+    }
+  },
+  "native_output": {
+    "status": "abstain",
+    "intent": "financial-analysis",
+    "reason": "Synthetic preservation fixture; upstream was not executed and no native recommendation is asserted."
+  },
+  "notes": [
+    "All complete-case inputs and judgments are synthetic.",
+    "27/27 means evidence declarations are complete in this fixture, not accuracy or confidence."
+  ]
+}

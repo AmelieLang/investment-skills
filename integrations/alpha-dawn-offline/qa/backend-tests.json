@@ -1,0 +1,282 @@
+{
+  "recorded_at": "2026-10-12T20:22:02.784978Z",
+  "execution": "python -m unittest discover -s tests -v",
+  "execution_exit_code": 0,
+  "execution_summary": "Ran 54 tests; OK",
+  "scope": "Actual successful full backend regression after the only runtime/test changes; includes four R2 timeline regressions and prior safety checks. Recording does not rerun the suite.",
+  "passed": 54,
+  "failed": 0,
+  "errors": 0,
+  "records": [
+    {
+      "test": "test_adapter.AdapterTests.test_actual_send_and_trade_calls_rejected_without_side_effects",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_ads_price_unit_and_currency_mismatch",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_adverse_and_positive_supported_bands_conflict",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_assumption_cannot_launder_future_evidence",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_complete_synthetic_native_abstention_is_immutable",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_conflict_does_not_count_as_support",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_convenience_fx_and_fx_date_refused",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_critical_risk_cannot_be_averaged_away",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_duplicate_claim_rejected_and_included_lease_counted_once",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_duplicate_results_are_identical",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_exact_fcff_dcf_and_security_bridge",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_frozen_anchors_and_requirements",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_future_forecast_period_can_be_known_before_cutoff",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_hypothetical_stress_cannot_replace_history",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_later_revision_is_not_historical_available_data",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_missing_component_no_renormalization",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_missing_fx_preserves_same_currency_values",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_missing_price_does_not_block_absolute_dcf",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_missing_shares_and_ratio_have_limited_blocking_scope",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_nonfinite_duplicate_json_and_malformed_output",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_nonpositive_denominators_and_price",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_public_history_is_explicitly_incomplete",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_r1_actual_period_cannot_postdate_its_publication",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_r1_annual_cannot_substitute_for_latest_interim",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_r1_capital_and_governance_four_do_not_require_historical_stress",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_r1_compatible_nested_positive_support",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_r1_compatible_published_guidance_admitted",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_r1_explicit_carry_forward_assumption_is_distinct",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_r1_historical_actual_cannot_be_direct_forecast",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_r1_missing_annual_period_blocks_window_component",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_r1_negative_value_has_no_comparison_ratios",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_r1_one_day_does_not_meet_multi_year_window",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_r1_proposed_handoff_rejects_shared_mutable_or_executable_envelope",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_r1_quarter_assumption_cannot_be_annual_flow",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_r1_refuted_profitability_conflicts_with_repeated_profitability",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_r1_window_override_requires_predeclared_reason",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_r1_wrong_financial_definition_is_blocked",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_r1_zero_value_has_no_comparison_ratios",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_r2_consecutive_two_year_forecast_is_valid",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_r2_exact_overlapping_annual_forecasts_are_rejected",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_r2_gap_between_annual_forecasts_is_rejected",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_r2_initial_omitted_interval_is_rejected",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_rate_and_tax_domains",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_reversed_cashflow_dates",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_signed_cashflow_equity_and_net_cash_are_preserved",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_source_text_is_data_not_a_command",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_unknown_and_future_publication",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_unknown_fields_and_duplicate_ids",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_unknown_lower_anchor_cannot_be_skipped",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_unknown_start_and_future_actual_period",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_unresolved_counterevidence_blocks_component",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_upstream_integrity_without_executing_it",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_zero_claim_is_valid_but_missing_is_not",
+      "status": "passed"
+    },
+    {
+      "test": "test_adapter.AdapterTests.test_zero_score_is_observed",
+      "status": "passed"
+    }
+  ],
+  "tested_source_hashes": [
+    {
+      "path": "adapter.py",
+      "sha256": "c9575a29a36ef89f1aa7ba0752cc61f67fc864e6b16ec1317abe96f554f7aa47"
+    },
+    {
+      "path": "tests/test_adapter.py",
+      "sha256": "913789c579ea7d7139a9f3be0398e682f8b8db643ac799fb3b21a6442272af2c"
+    },
+    {
+      "path": "tests/dashboard_security.cjs",
+      "sha256": "95aed28fb5abd45049455a2a27defc4f8cdc2bd44b5b6f4f7327b6cd4581dfc1"
+    },
+    {
+      "path": "ui/dashboard.js",
+      "sha256": "aa290a4fb7a1ad83b2c68dd9d4ff1111af57f07a5fd2c16fba2eb809de79667a"
+    },
+    {
+      "path": "config/anchors.v1.json",
+      "sha256": "e1ce5d705f4bce0452c986ced8d8c50794f080b05bc5bbc03f95bc9828dc2f73"
+    },
+    {
+      "path": "config/observation-window.v1.json",
+      "sha256": "c71a3e50483387392759e6feaad51207f8a56f4395928e3c962c67fb9320e15a"
+    },
+    {
+      "path": "config/requirements.v1.json",
+      "sha256": "e0282dc19558e67c82f30e62eb0aa27575b948b4dec268bd1241bdd4bde89648"
+    },
+    {
+      "path": "schema/handoff.proposal.v1.json",
+      "sha256": "7b1fd803808a52794d5ad1581db02bbae98732d1adaa8285e7b0bc0c56ee96e9"
+    },
+    {
+      "path": "schema/request.v1.json",
+      "sha256": "ea2576167e6e94733e1f797e26bd504d28acfc0e5ff05161f6e2e6d3a68e2891"
+    },
+    {
+      "path": "schema/result.v1.json",
+      "sha256": "fc8bb7b49786f9e4a1221f26062bcd0999395eee7705f47dcf75b85835018cc8"
+    },
+    {
+      "path": "examples/apple-fy2023-public-gaps.input.json",
+      "sha256": "878dcd395406e4fd80a1477364d3005c91320411588d79e56bc185e1539f9f03"
+    },
+    {
+      "path": "examples/synthetic-complete.input.json",
+      "sha256": "bd3e29f0b9fc6a687b689a84e04ba28a6d93aec0a3c1dcb0a7081809ac2c36b3"
+    },
+    {
+      "path": "examples/synthetic-hard-risk.input.json",
+      "sha256": "0f689a196bf918ed7d9d3e10c12390703ce62a8b842d50e243e01410a5cbd736"
+    }
+  ]
+}
