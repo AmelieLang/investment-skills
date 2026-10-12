@@ -1,0 +1,197 @@
+{
+  "version": "evidence-requirements/1.1.0",
+  "declared_count": 27,
+  "freeze": "before candidate output",
+  "equal_weight": true,
+  "items": [
+    {
+      "id": "Q01",
+      "group": "quality",
+      "title": "商业模式、收入来源与重复需求",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    },
+    {
+      "id": "Q02",
+      "group": "quality",
+      "title": "同口径量价、成本与正常化单位经济",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    },
+    {
+      "id": "Q03",
+      "group": "quality",
+      "title": "跨期稳定性、不利期表现及边界",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    },
+    {
+      "id": "Q04",
+      "group": "quality",
+      "title": "份额、定价与销量变化",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    },
+    {
+      "id": "Q05",
+      "group": "quality",
+      "title": "成本、转换成本、渠道优势的可核依据",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    },
+    {
+      "id": "Q06",
+      "group": "quality",
+      "title": "竞争压力及公司应对结果",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    },
+    {
+      "id": "Q07",
+      "group": "quality",
+      "title": "利润到经营现金再到再投资后现金的调节",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    },
+    {
+      "id": "Q08",
+      "group": "quality",
+      "title": "投入资本、回报与资本成本比较依据",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    },
+    {
+      "id": "Q09",
+      "group": "quality",
+      "title": "再投资、回购、稀释对每股现金的影响",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    },
+    {
+      "id": "Q10",
+      "group": "quality",
+      "title": "债务、到期结构与契约义务",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    },
+    {
+      "id": "Q11",
+      "group": "quality",
+      "title": "可用现金、受限资金与现金消耗",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    },
+    {
+      "id": "Q12",
+      "group": "quality",
+      "title": "基准及压力情景资金桥与假设",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    },
+    {
+      "id": "Q13",
+      "group": "quality",
+      "title": "控制权、激励与关联交易",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    },
+    {
+      "id": "Q14",
+      "group": "quality",
+      "title": "审计、重述及重大诚信争议",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    },
+    {
+      "id": "Q15",
+      "group": "quality",
+      "title": "资本配置决策、结果及纠错记录",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    },
+    {
+      "id": "V01",
+      "group": "dcf",
+      "title": "基期经营利润、税与折旧",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    },
+    {
+      "id": "V02",
+      "group": "dcf",
+      "title": "资本开支、营运资本与现金调节",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    },
+    {
+      "id": "V03",
+      "group": "dcf",
+      "title": "经营预测的公开或历史锚点",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    },
+    {
+      "id": "V04",
+      "group": "dcf",
+      "title": "折现率参考依据",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    },
+    {
+      "id": "V05",
+      "group": "dcf",
+      "title": "长期经营及终值假设的对照依据",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    },
+    {
+      "id": "V06",
+      "group": "dcf",
+      "title": "现金、债务与其他索取权",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    },
+    {
+      "id": "V07",
+      "group": "dcf",
+      "title": "非经营资产归属及限制",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    },
+    {
+      "id": "V08",
+      "group": "dcf",
+      "title": "普通股、摊薄及经济权利分母",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    },
+    {
+      "id": "C01",
+      "group": "comparison",
+      "title": "价格、日期、币种与报价单位",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    },
+    {
+      "id": "C02",
+      "group": "comparison",
+      "title": "普通股与ADS对应关系",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    },
+    {
+      "id": "C03",
+      "group": "comparison",
+      "title": "币种桥及适用汇率",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    },
+    {
+      "id": "C04",
+      "group": "comparison",
+      "title": "分红、拆并股及其他证券单位变化",
+      "weight": 1,
+      "criterion": "Referenced fact evidence must be available, time/period/unit eligible and free of unresolved contradiction. Negative evidence can satisfy; an assumption alone cannot."
+    }
+  ]
+}

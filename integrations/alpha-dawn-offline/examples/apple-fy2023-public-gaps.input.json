@@ -1,0 +1,126 @@
+{
+  "schema_version": "offline-alpha-dawn/v1.1",
+  "operation": "compute",
+  "case_id": "apple-fy2023-public-gaps",
+  "bot_id": "alpha-dawn-framework",
+  "cutoff_at": "2023-11-03T23:59:59Z",
+  "valuation_date": "2023-11-03",
+  "evaluated_at": "2026-10-12T20:00:17.332296Z",
+  "facts": [
+    {
+      "id": "apple.q4.revenue",
+      "metric": "quarterly_revenue",
+      "kind": "actual",
+      "value": 89500,
+      "unit": "million_currency",
+      "currency": "USD",
+      "period": {
+        "start": null,
+        "end": "2023-09-30",
+        "frequency": "quarterly"
+      },
+      "periods_observed": [],
+      "financial_definition": null,
+      "observed_at": "2023-11-03T23:59:59Z",
+      "published_at": null,
+      "vintage_at": null,
+      "evidence_kind": "reported",
+      "source": {
+        "id": "apple.newsroom.20231102",
+        "uri": "https://www.apple.com/newsroom/2023/11/apple-reports-fourth-quarter-results/",
+        "locator": "2023-11-02 press release: September quarter revenue $89.5 billion; period start not asserted by this limited source",
+        "visibility": "public",
+        "available": true,
+        "published_date": "2023-11-02"
+      }
+    }
+  ],
+  "assumptions": [],
+  "requirement_evidence": {},
+  "quality_window": {
+    "policy_id": "latest_three_fiscal_years_plus_latest_interim/v1",
+    "mode": "default",
+    "frozen_at": "2026-10-12T20:00:17.332296Z",
+    "override_reason": "",
+    "fiscal_years": [],
+    "latest_interim": null,
+    "calendar_basis_fact_ids": []
+  },
+  "quality_assessments": [],
+  "contradictions": [],
+  "hard_risks": [],
+  "falsifiers": [
+    {
+      "id": "f1",
+      "metric": "cash_shortfall",
+      "operator": "gt",
+      "threshold": 0,
+      "unit": "currency",
+      "period": "next 12 months",
+      "impact": "revisit resilience analysis",
+      "status": "pending"
+    }
+  ],
+  "security": {
+    "listing_id": "NASDAQ:AAPL",
+    "quote_currency": "USD",
+    "quote_unit": "ordinary",
+    "ordinary_shares_ref": {
+      "fact_id": "missing.shares"
+    },
+    "ordinary_per_quote_unit_ref": {
+      "fact_id": "missing.ordinary_ratio"
+    }
+  },
+  "valuation": {
+    "currency": "USD",
+    "scenarios": [
+      {
+        "name": "bear",
+        "forecast": [],
+        "wacc_ref": {
+          "assumption_id": "bear.wacc"
+        },
+        "terminal_growth_ref": {
+          "assumption_id": "bear.g"
+        }
+      },
+      {
+        "name": "base",
+        "forecast": [],
+        "wacc_ref": {
+          "assumption_id": "base.wacc"
+        },
+        "terminal_growth_ref": {
+          "assumption_id": "base.g"
+        }
+      },
+      {
+        "name": "bull",
+        "forecast": [],
+        "wacc_ref": {
+          "assumption_id": "bull.wacc"
+        },
+        "terminal_growth_ref": {
+          "assumption_id": "bull.g"
+        }
+      }
+    ],
+    "bridge": [],
+    "price_ref": {
+      "fact_id": "missing.price"
+    },
+    "fx_ref": {
+      "fact_id": "missing.fx"
+    }
+  },
+  "native_output": {
+    "status": "not_run",
+    "intent": "financial-analysis",
+    "reason": "Only one public revenue observation supplied; exact filings, cash/claims, governance, moat, shares, price and valuation inputs remain absent."
+  },
+  "notes": [
+    "Partial historical public evidence receipt; not a complete Apple analysis or backtest.",
+    "Publication calendar date is known; exact timestamp and revision timestamp are deliberately not fabricated."
+  ]
+}

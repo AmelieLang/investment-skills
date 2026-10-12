@@ -1,0 +1,282 @@
+{
+  "performed_at": "2026-10-12T20:22:04.636569Z",
+  "files": [
+    {
+      "path": "adapter.py",
+      "bytes": 34574,
+      "sha256": "c9575a29a36ef89f1aa7ba0752cc61f67fc864e6b16ec1317abe96f554f7aa47"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 1017,
+      "sha256": "495409369659dbb7841b43558f84e80de36fafa068004a3c26e080a15d1fc083"
+    },
+    {
+      "path": "config/anchors.v1.json",
+      "bytes": 6940,
+      "sha256": "e1ce5d705f4bce0452c986ced8d8c50794f080b05bc5bbc03f95bc9828dc2f73"
+    },
+    {
+      "path": "config/observation-window.v1.json",
+      "bytes": 586,
+      "sha256": "c71a3e50483387392759e6feaad51207f8a56f4395928e3c962c67fb9320e15a"
+    },
+    {
+      "path": "config/requirements.v1.json",
+      "bytes": 9034,
+      "sha256": "e0282dc19558e67c82f30e62eb0aa27575b948b4dec268bd1241bdd4bde89648"
+    },
+    {
+      "path": "dashboard.html",
+      "bytes": 229110,
+      "sha256": "16c5e990c3692596ef040d099cb4e362193fad1b38e091c0bd3876eb3dc16761"
+    },
+    {
+      "path": "examples/apple-fy2023-public-gaps.input.json",
+      "bytes": 3571,
+      "sha256": "878dcd395406e4fd80a1477364d3005c91320411588d79e56bc185e1539f9f03"
+    },
+    {
+      "path": "examples/apple-fy2023-public-gaps.result.json",
+      "bytes": 35594,
+      "sha256": "c182d5839598806f4b208eeaebf4b8dd2ddbb72967cf96167804af9ded84bc75"
+    },
+    {
+      "path": "examples/synthetic-complete.input.json",
+      "bytes": 65598,
+      "sha256": "bd3e29f0b9fc6a687b689a84e04ba28a6d93aec0a3c1dcb0a7081809ac2c36b3"
+    },
+    {
+      "path": "examples/synthetic-complete.result.json",
+      "bytes": 102449,
+      "sha256": "bc5c6cb000ebc3c319c5f046622e4e9345a3ce8f11e8af08599f5fc01e921a1e"
+    },
+    {
+      "path": "examples/synthetic-hard-risk.input.json",
+      "bytes": 66010,
+      "sha256": "0f689a196bf918ed7d9d3e10c12390703ce62a8b842d50e243e01410a5cbd736"
+    },
+    {
+      "path": "examples/synthetic-hard-risk.result.json",
+      "bytes": 103360,
+      "sha256": "f606e1da17c181e877c76d1544db854a4634796146f00017bb5563a1f60ee2a7"
+    },
+    {
+      "path": "HANDOFF_ISOLATION_PROPOSAL.md",
+      "bytes": 2299,
+      "sha256": "6a6add1c3010bd1f9da8112b0d251258d4fefa3f6a07857d00930c5add6ccbbe"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1067,
+      "sha256": "83a2c370b7a30045643a5c3236b27aa4ea6c0f3dee54672297be9320fa4a7cc3"
+    },
+    {
+      "path": "method-manifest.json",
+      "bytes": 4243,
+      "sha256": "7e9b187ec37c358e3b5b3e8ce7ccc0836c220873ecc4f10d3bd5418713456589"
+    },
+    {
+      "path": "NOTICE.md",
+      "bytes": 700,
+      "sha256": "fe6e89e0eba7c65772fc698b074e9537e80e57a853c569888ea08d7099c47b06"
+    },
+    {
+      "path": "qa/actual-operation-refusal.json",
+      "bytes": 1451,
+      "sha256": "b10b8663f1c236cb15aa01f0582a2348be9195ef827700c51c1aa8dc2b6e02a3"
+    },
+    {
+      "path": "qa/backend-tests.json",
+      "bytes": 9526,
+      "sha256": "da21432beeb36c8293680c0a3495ecdd4575b88a8b6079ba3b7e7e182131793b"
+    },
+    {
+      "path": "qa/dashboard-tests.json",
+      "bytes": 2041,
+      "sha256": "6d86d6f89f88d264198022df96e7cf8fa2e6551ed3eca405de82d91f10cdc936"
+    },
+    {
+      "path": "qa/public-content-audit.json",
+      "bytes": 545,
+      "sha256": "410a09f5d7c696bda8e48a71267f48789c0f8817a3dc06a951cc086789b2a077"
+    },
+    {
+      "path": "qa/r2-period-integrity.json",
+      "bytes": 8200,
+      "sha256": "18196bc77d2c2fed120ba5cf06b7191c7ae6d2be1bd55f9a62f8f459b5224ecb"
+    },
+    {
+      "path": "qa/visual/complete.png",
+      "bytes": 162118,
+      "sha256": "ca38dcfe5c20a8859dc80ce41a12e8934ca5aa5c2681545f45d8456c8c9f350b"
+    },
+    {
+      "path": "qa/visual/hard-risk.png",
+      "bytes": 173249,
+      "sha256": "bdb36d9c035be9da4c15dc5455546cbcffe823e1cc0cb51019ac4085beab977e"
+    },
+    {
+      "path": "qa/visual/public-gaps.png",
+      "bytes": 164455,
+      "sha256": "0507375f046fc382e2ba2537badad1276c48ecb87d35709a9c01c028ad8dd6db"
+    },
+    {
+      "path": "qa/visual-qa.json",
+      "bytes": 2589,
+      "sha256": "9386a127dda35254e6764faa91b772b59cfbd80fe520f97a55dfc7c85be9cfa6"
+    },
+    {
+      "path": "R1_REVIEW_MAP.md",
+      "bytes": 2008,
+      "sha256": "8f25db930b8d7faf2ac05473a48cf87237b4824b1c126766f588c9d8abc37614"
+    },
+    {
+      "path": "R2_REVIEW_MAP.md",
+      "bytes": 1426,
+      "sha256": "a632c462d370c564e07f4dbc5cec0dff162b755ba04f8b58cab760bfb19aca7b"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6905,
+      "sha256": "a6646c3fcfd1e5fc6d82ccd9c4eb3001c97c58d8134b6d20ed696ddf3d2ba5e2"
+    },
+    {
+      "path": "schema/handoff.proposal.v1.json",
+      "bytes": 2061,
+      "sha256": "7b1fd803808a52794d5ad1581db02bbae98732d1adaa8285e7b0bc0c56ee96e9"
+    },
+    {
+      "path": "schema/request.v1.json",
+      "bytes": 24371,
+      "sha256": "ea2576167e6e94733e1f797e26bd504d28acfc0e5ff05161f6e2e6d3a68e2891"
+    },
+    {
+      "path": "schema/result.v1.json",
+      "bytes": 53450,
+      "sha256": "fc8bb7b49786f9e4a1221f26062bcd0999395eee7705f47dcf75b85835018cc8"
+    },
+    {
+      "path": "scripts/build_contract.py",
+      "bytes": 29683,
+      "sha256": "21782704cb72cf876a2c200a0247ed9d7e9dd59e90982f7b4eaddb4fbc527d50"
+    },
+    {
+      "path": "scripts/build_dashboard.py",
+      "bytes": 3889,
+      "sha256": "90b739cd840cb86ef5c0604cf56bbb72491db101bcb8d2aac339dc503a827761"
+    },
+    {
+      "path": "scripts/package_candidate.py",
+      "bytes": 7921,
+      "sha256": "080b323673de72b2f95b7ba038d036c099a6a5a9deef65880021d67318862f99"
+    },
+    {
+      "path": "SOURCE_MAP.md",
+      "bytes": 1971,
+      "sha256": "c07ead31b21aa608018cdf2c8b249dba350fb5410bc48f6c4458b8cc61d74e6f"
+    },
+    {
+      "path": "tests/dashboard_security.cjs",
+      "bytes": 6914,
+      "sha256": "95aed28fb5abd45049455a2a27defc4f8cdc2bd44b5b6f4f7327b6cd4581dfc1"
+    },
+    {
+      "path": "tests/test_adapter.py",
+      "bytes": 24140,
+      "sha256": "913789c579ea7d7139a9f3be0398e682f8b8db643ac799fb3b21a6442272af2c"
+    },
+    {
+      "path": "ui/dashboard.css",
+      "bytes": 4713,
+      "sha256": "4c86e4492602e46852cbe52612db8f4c9ce062b6fa16b561b1888d2a8b33792e"
+    },
+    {
+      "path": "ui/dashboard.js",
+      "bytes": 19442,
+      "sha256": "aa290a4fb7a1ad83b2c68dd9d4ff1111af57f07a5fd2c16fba2eb809de79667a"
+    },
+    {
+      "path": "upstream-files.json",
+      "bytes": 3330,
+      "sha256": "57c44df2b47e2ed011fc1ed32d4d85fad86fe968e498714d1c18c746f30b9fb0"
+    },
+    {
+      "path": "vendor/finterm/LICENSE",
+      "bytes": 1067,
+      "sha256": "83a2c370b7a30045643a5c3236b27aa4ea6c0f3dee54672297be9320fa4a7cc3"
+    },
+    {
+      "path": "vendor/finterm/skills/buffett-investment-framework/agents/openai.yaml",
+      "bytes": 213,
+      "sha256": "361925fff549a33278fd44988f46da2999c3b35e432926ff711143c74c73f239"
+    },
+    {
+      "path": "vendor/finterm/skills/buffett-investment-framework/references/00-source-key.md",
+      "bytes": 6592,
+      "sha256": "fd0c4fd472b6c8b4b04dd7f28a100aa33fd3e971ce4de89cf4106a71e6d5b9b8"
+    },
+    {
+      "path": "vendor/finterm/skills/buffett-investment-framework/references/01-decision-posture.md",
+      "bytes": 13224,
+      "sha256": "2b61a70670c826c4e1d952ea55bb53eeb39ed39d95179164d2ea8f6aa56edb3d"
+    },
+    {
+      "path": "vendor/finterm/skills/buffett-investment-framework/references/02-business-economics.md",
+      "bytes": 10227,
+      "sha256": "839e3d8a80441f13a0f33eb4e19d8b175f97effa3c80a9abac0405ee8eb94afc"
+    },
+    {
+      "path": "vendor/finterm/skills/buffett-investment-framework/references/03-management-governance.md",
+      "bytes": 11699,
+      "sha256": "adf715871f20c41f811bf03d81c38368f00bbed068262f57c90ec9d309e6a322"
+    },
+    {
+      "path": "vendor/finterm/skills/buffett-investment-framework/references/04-financial-reality.md",
+      "bytes": 10295,
+      "sha256": "4a9f62a3c91f16f23c812411a849d3180e0361a1b69755ce84d9f60619e2e767"
+    },
+    {
+      "path": "vendor/finterm/skills/buffett-investment-framework/references/05-valuation.md",
+      "bytes": 8844,
+      "sha256": "03a9395e0c4563d96d865638e953894a842f0475495c0f7e0e4d7d2428f1abca"
+    },
+    {
+      "path": "vendor/finterm/skills/buffett-investment-framework/references/06-capital-allocation.md",
+      "bytes": 13240,
+      "sha256": "15f712f413c8db01dca0f2c92988732899acaf4b4229fcabd38da5e5a4b1960d"
+    },
+    {
+      "path": "vendor/finterm/skills/buffett-investment-framework/references/07-risk-monitoring.md",
+      "bytes": 10170,
+      "sha256": "d5a61603a98bf09a99f16e8545da69474a685f963c693511f01e5fc7297ecad1"
+    },
+    {
+      "path": "vendor/finterm/skills/buffett-investment-framework/references/08-specialized-overlays.md",
+      "bytes": 17507,
+      "sha256": "fde84b1f8539a19daf47368477ce9b1b35df9d0efc9de533e94715244c50f3c9"
+    },
+    {
+      "path": "vendor/finterm/skills/buffett-investment-framework/scripts/framework.py",
+      "bytes": 18085,
+      "sha256": "37c8db45c48aef8ac43f45732a0cfa632353ab69440ec0a35d9abd26d1c8f488"
+    },
+    {
+      "path": "vendor/finterm/skills/buffett-investment-framework/SKILL.md",
+      "bytes": 11468,
+      "sha256": "4e68fa9add83b8a688dc185e12ae0619d93214e28905a3676ddc2823f49cf4bf"
+    },
+    {
+      "path": "CHANGES.patch",
+      "bytes": 1653027,
+      "sha256": "d7a5b88d7405d5f59488e81a21734d328b7fd7e4b500b50b864405435236ffdb"
+    },
+    {
+      "path": "R2_CHANGES.patch",
+      "bytes": 23594,
+      "sha256": "f839a8afecc07376395f769c14381e35b2e736b79dc26da7e914cfe23b79e0b6"
+    }
+  ],
+  "self_hash_excluded": true,
+  "diff_baseline": "empty isolated directory; all additions. Existing Alpha Dawn untouched."
+}

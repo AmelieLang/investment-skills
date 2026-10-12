@@ -1,0 +1,280 @@
+{
+  "version": "quality-anchors/1.0.0",
+  "origin": "custom analyst scoring, not native Buffett scoring",
+  "application_version": "anchor-application/1.1.0",
+  "selection": "Examine all bands. Positive levels 2/3/4 can be compatible and nested: choose the highest fully supported compatible level. Supported adverse conditions conflict with positive claims; unresolved material counterevidence blocks. If only adverse bands are supported, retain the more severe lower grade rather than hiding it with a milder one.",
+  "history_rule": "historical_stress is observed history; hypothetical stress never substitutes for historical adversity",
+  "components": [
+    {
+      "id": "economics",
+      "label": "经营经济性",
+      "weight": 25,
+      "requirements": [
+        "Q01",
+        "Q02",
+        "Q03"
+      ],
+      "historical_stress_requirement": "Q03",
+      "window_requirement": "Q03",
+      "compatibility": {
+        "adverse_levels": [
+          0,
+          1
+        ],
+        "compatible_positive_levels": [
+          2,
+          3,
+          4
+        ],
+        "entailed_positive_levels": {
+          "3": [
+            2
+          ],
+          "4": [
+            2,
+            3
+          ]
+        }
+      },
+      "anchors": [
+        {
+          "level": 0,
+          "anchor_id": "economics.0",
+          "text": "常态单位经济持续负"
+        },
+        {
+          "level": 1,
+          "anchor_id": "economics.1",
+          "text": "盈利主要依赖一次性因素"
+        },
+        {
+          "level": 2,
+          "anchor_id": "economics.2",
+          "text": "正常经营盈利成立"
+        },
+        {
+          "level": 3,
+          "anchor_id": "economics.3",
+          "text": "重复需求与盈利跨期成立"
+        },
+        {
+          "level": 4,
+          "anchor_id": "economics.4",
+          "text": "不利环境仍保留经济性"
+        }
+      ]
+    },
+    {
+      "id": "moat",
+      "label": "竞争优势",
+      "weight": 20,
+      "requirements": [
+        "Q04",
+        "Q05",
+        "Q06"
+      ],
+      "historical_stress_requirement": "Q06",
+      "window_requirement": "Q06",
+      "compatibility": {
+        "adverse_levels": [
+          0,
+          1
+        ],
+        "compatible_positive_levels": [
+          2,
+          3,
+          4
+        ],
+        "entailed_positive_levels": {}
+      },
+      "anchors": [
+        {
+          "level": 0,
+          "anchor_id": "moat.0",
+          "text": "份额与定价持续被侵蚀"
+        },
+        {
+          "level": 1,
+          "anchor_id": "moat.1",
+          "text": "易替换、主要靠价格竞争"
+        },
+        {
+          "level": 2,
+          "anchor_id": "moat.2",
+          "text": "局部优势但可复制"
+        },
+        {
+          "level": 3,
+          "anchor_id": "moat.3",
+          "text": "成本、转换成本或渠道优势有证据"
+        },
+        {
+          "level": 4,
+          "anchor_id": "moat.4",
+          "text": "优势经竞争冲击仍保持"
+        }
+      ]
+    },
+    {
+      "id": "capital",
+      "label": "现金与资本效率",
+      "weight": 25,
+      "requirements": [
+        "Q07",
+        "Q08",
+        "Q09"
+      ],
+      "historical_stress_requirement": null,
+      "window_requirement": "Q09",
+      "compatibility": {
+        "adverse_levels": [
+          0,
+          1
+        ],
+        "compatible_positive_levels": [
+          2,
+          3,
+          4
+        ],
+        "entailed_positive_levels": {}
+      },
+      "anchors": [
+        {
+          "level": 0,
+          "anchor_id": "capital.0",
+          "text": "持续毁损资本"
+        },
+        {
+          "level": 1,
+          "anchor_id": "capital.1",
+          "text": "利润难转现金、再投资回报不足"
+        },
+        {
+          "level": 2,
+          "anchor_id": "capital.2",
+          "text": "常态资本回报覆盖成本"
+        },
+        {
+          "level": 3,
+          "anchor_id": "capital.3",
+          "text": "再投资后现金回报稳定"
+        },
+        {
+          "level": 4,
+          "anchor_id": "capital.4",
+          "text": "增长与每股现金回报共同兑现"
+        }
+      ]
+    },
+    {
+      "id": "resilience",
+      "label": "财务韧性",
+      "weight": 15,
+      "requirements": [
+        "Q10",
+        "Q11",
+        "Q12"
+      ],
+      "historical_stress_requirement": null,
+      "window_requirement": "Q11",
+      "compatibility": {
+        "adverse_levels": [
+          0,
+          1
+        ],
+        "compatible_positive_levels": [
+          2,
+          3,
+          4
+        ],
+        "entailed_positive_levels": {
+          "3": [
+            2
+          ],
+          "4": [
+            2,
+            3
+          ]
+        }
+      },
+      "anchors": [
+        {
+          "level": 0,
+          "anchor_id": "resilience.0",
+          "text": "已出现偿付缺口"
+        },
+        {
+          "level": 1,
+          "anchor_id": "resilience.1",
+          "text": "生存依赖再融资"
+        },
+        {
+          "level": 2,
+          "anchor_id": "resilience.2",
+          "text": "基准情景可覆盖义务"
+        },
+        {
+          "level": 3,
+          "anchor_id": "resilience.3",
+          "text": "经营下行情景仍可覆盖"
+        },
+        {
+          "level": 4,
+          "anchor_id": "resilience.4",
+          "text": "严重压力下仍有资金余量"
+        }
+      ]
+    },
+    {
+      "id": "governance",
+      "label": "治理与资本配置",
+      "weight": 15,
+      "requirements": [
+        "Q13",
+        "Q14",
+        "Q15"
+      ],
+      "historical_stress_requirement": null,
+      "window_requirement": "Q15",
+      "compatibility": {
+        "adverse_levels": [
+          0,
+          1
+        ],
+        "compatible_positive_levels": [
+          2,
+          3,
+          4
+        ],
+        "entailed_positive_levels": {}
+      },
+      "anchors": [
+        {
+          "level": 0,
+          "anchor_id": "governance.0",
+          "text": "已证实严重利益冲突"
+        },
+        {
+          "level": 1,
+          "anchor_id": "governance.1",
+          "text": "持续损害股东回报"
+        },
+        {
+          "level": 2,
+          "anchor_id": "governance.2",
+          "text": "基本对齐、记录参差"
+        },
+        {
+          "level": 3,
+          "anchor_id": "governance.3",
+          "text": "配置纪律和结果可追溯"
+        },
+        {
+          "level": 4,
+          "anchor_id": "governance.4",
+          "text": "跨期配置有效且纠错明确"
+        }
+      ]
+    }
+  ]
+}

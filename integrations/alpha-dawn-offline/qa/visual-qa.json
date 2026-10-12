@@ -1,0 +1,58 @@
+{
+  "performed_at": "2026-10-12T20:08:53.360459Z",
+  "status": "passed_for_listed_viewports",
+  "source_html_sha256": "16c5e990c3692596ef040d099cb4e362193fad1b38e091c0bd3876eb3dc16761",
+  "byte_copy_verified": true,
+  "screenshots_distributed": true,
+  "user_authorized_deliverable_scope": "Actual render PNGs of synthetic/public fixtures only, private review candidate. No unrelated desktop or personal/payment content.",
+  "render_route": "Local headless Chrome, isolated task-scoped profiles, network disabled; exact-byte copy of final HTML.",
+  "checks": [
+    {
+      "case": "synthetic complete",
+      "fragment": "",
+      "viewport": [
+        1440,
+        1600
+      ],
+      "screenshot_path": "qa/visual/complete.png",
+      "screenshot_bytes": 162118,
+      "screenshot_sha256": "ca38dcfe5c20a8859dc80ce41a12e8934ca5aa5c2681545f45d8456c8c9f350b",
+      "source_html_sha256": "16c5e990c3692596ef040d099cb4e362193fad1b38e091c0bd3876eb3dc16761",
+      "status": "passed",
+      "observations": "Four panels, quality 75.00, FCFF values and quote units, native abstention, 27/27 coverage and footer readable; no visible overlap or clipping."
+    },
+    {
+      "case": "public historical gaps",
+      "fragment": "#history",
+      "viewport": [
+        600,
+        3000
+      ],
+      "screenshot_path": "qa/visual/public-gaps.png",
+      "screenshot_bytes": 164455,
+      "screenshot_sha256": "0507375f046fc382e2ba2537badad1276c48ecb87d35709a9c01c028ad8dd6db",
+      "source_html_sha256": "16c5e990c3692596ef040d099cb4e362193fad1b38e091c0bd3876eb3dc16761",
+      "status": "passed",
+      "observations": "Single-column layout with all four panels and footer visible; main quality absent, valuation not computable, 0/27 and ineligible fact explicit."
+    },
+    {
+      "case": "synthetic material hard risk",
+      "fragment": "#risk",
+      "viewport": [
+        1440,
+        1800
+      ],
+      "screenshot_path": "qa/visual/hard-risk.png",
+      "screenshot_bytes": 173249,
+      "screenshot_sha256": "bdb36d9c035be9da4c15dc5455546cbcffe823e1cc0cb51019ac4085beab977e",
+      "source_html_sha256": "16c5e990c3692596ef040d099cb4e362193fad1b38e091c0bd3876eb3dc16761",
+      "status": "passed",
+      "observations": "Main quality absent and severe-risk blocking warning visible; arithmetic contribution 63.75 clearly secondary; resilience 0/4 and material-risk panel visible."
+    }
+  ],
+  "not_verified": [
+    "physical mobile device",
+    "420px device viewport",
+    "live multi-bot orchestration/isolation"
+  ]
+}

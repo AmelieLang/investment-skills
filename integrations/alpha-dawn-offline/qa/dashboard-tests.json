@@ -1,0 +1,92 @@
+{
+  "suite": "dashboard offline security",
+  "passed": 21,
+  "failed": 0,
+  "networkCalls": 0,
+  "checks": [
+    {
+      "name": "default four panels render",
+      "status": "passed"
+    },
+    {
+      "name": "duplicate results never double count",
+      "status": "passed"
+    },
+    {
+      "name": "same ID different payload rejected",
+      "status": "passed"
+    },
+    {
+      "name": "malicious source and native text remain text",
+      "status": "passed"
+    },
+    {
+      "name": "malformed result refused",
+      "status": "passed"
+    },
+    {
+      "name": "nonfinite nested output refused",
+      "status": "passed"
+    },
+    {
+      "name": "forged finite totals and coverage refused",
+      "status": "passed"
+    },
+    {
+      "name": "duplicate JSON keys refused",
+      "status": "passed"
+    },
+    {
+      "name": "prototype-shaped data remains inert",
+      "status": "passed"
+    },
+    {
+      "name": "nonfinite number token refused",
+      "status": "passed"
+    },
+    {
+      "name": "historical gaps render without synthetic facts",
+      "status": "passed"
+    },
+    {
+      "name": "send/trade enabled payload refused",
+      "status": "passed"
+    },
+    {
+      "name": "R1 forged confirmed default cannot keep 75",
+      "status": "passed"
+    },
+    {
+      "name": "R1 evidence receipt is required",
+      "status": "passed"
+    },
+    {
+      "name": "R1 malformed nested native and valuation records refused",
+      "status": "passed"
+    },
+    {
+      "name": "R1 frozen requirement IDs and groups enforced",
+      "status": "passed"
+    },
+    {
+      "name": "R1 negative and zero model ratios refused",
+      "status": "passed"
+    },
+    {
+      "name": "R1 material risk view suppresses main score",
+      "status": "passed"
+    },
+    {
+      "name": "network calls remain zero",
+      "status": "passed"
+    },
+    {
+      "name": "CSP blocks connection and form routes",
+      "status": "passed"
+    },
+    {
+      "name": "embedded JSON is escaped",
+      "status": "passed"
+    }
+  ]
+}

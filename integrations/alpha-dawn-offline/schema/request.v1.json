@@ -1,0 +1,1066 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "offline-alpha-dawn/v1.1"
+    },
+    "case_id": {
+      "type": "string",
+      "pattern": "[A-Za-z0-9_.-]+",
+      "maxLength": 150
+    },
+    "bot_id": {
+      "const": "alpha-dawn-framework"
+    },
+    "operation": {
+      "enum": [
+        "validate",
+        "compute"
+      ]
+    },
+    "cutoff_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "valuation_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "evaluated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/fact"
+      },
+      "minItems": 0,
+      "maxItems": 1000
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/assumption"
+      },
+      "minItems": 0,
+      "maxItems": 1000
+    },
+    "quality_window": {
+      "type": "object",
+      "properties": {
+        "policy_id": {
+          "const": "latest_three_fiscal_years_plus_latest_interim/v1"
+        },
+        "mode": {
+          "enum": [
+            "default",
+            "case_specific"
+          ]
+        },
+        "frozen_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "override_reason": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "fiscal_years": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "start": {
+                "type": "string",
+                "format": "date"
+              },
+              "end": {
+                "type": "string",
+                "format": "date"
+              },
+              "frequency": {
+                "enum": [
+                  "annual",
+                  "interim",
+                  "quarterly",
+                  "instant"
+                ]
+              }
+            },
+            "required": [
+              "start",
+              "end",
+              "frequency"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 3
+        },
+        "latest_interim": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "start": {
+              "type": "string",
+              "format": "date"
+            },
+            "end": {
+              "type": "string",
+              "format": "date"
+            },
+            "frequency": {
+              "enum": [
+                "interim",
+                "quarterly"
+              ]
+            }
+          },
+          "required": [
+            "start",
+            "end",
+            "frequency"
+          ],
+          "additionalProperties": false
+        },
+        "calendar_basis_fact_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "[A-Za-z0-9_.-]+",
+            "maxLength": 150
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        }
+      },
+      "required": [
+        "policy_id",
+        "mode",
+        "frozen_at",
+        "override_reason",
+        "fiscal_years",
+        "latest_interim",
+        "calendar_basis_fact_ids"
+      ],
+      "additionalProperties": false
+    },
+    "requirement_evidence": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "[A-Za-z0-9_.-]+",
+          "maxLength": 150
+        },
+        "minItems": 0,
+        "maxItems": 1000
+      }
+    },
+    "quality_assessments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/judgment"
+      },
+      "minItems": 0,
+      "maxItems": 5
+    },
+    "contradictions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/contradiction"
+      },
+      "minItems": 0,
+      "maxItems": 1000
+    },
+    "hard_risks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/hard"
+      },
+      "minItems": 0,
+      "maxItems": 1000
+    },
+    "falsifiers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/falsifier"
+      },
+      "minItems": 0,
+      "maxItems": 1000
+    },
+    "security": {
+      "$ref": "#/$defs/security"
+    },
+    "valuation": {
+      "$ref": "#/$defs/valuation"
+    },
+    "native_output": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "intent": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "reason": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "raw_text": {
+          "type": "string",
+          "maxLength": 30000
+        }
+      },
+      "required": [],
+      "additionalProperties": {}
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 30000
+      },
+      "minItems": 0,
+      "maxItems": 1000
+    }
+  },
+  "required": [
+    "schema_version",
+    "case_id",
+    "bot_id",
+    "operation",
+    "cutoff_at",
+    "valuation_date",
+    "evaluated_at",
+    "facts",
+    "assumptions",
+    "quality_window",
+    "requirement_evidence",
+    "quality_assessments",
+    "contradictions",
+    "hard_risks",
+    "falsifiers",
+    "security",
+    "valuation",
+    "native_output",
+    "notes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:offline-alpha-dawn:request:v1",
+  "$defs": {
+    "source": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "[A-Za-z0-9_.-]+",
+          "maxLength": 150
+        },
+        "uri": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "locator": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "visibility": {
+          "enum": [
+            "public",
+            "synthetic"
+          ]
+        },
+        "available": {
+          "type": "boolean"
+        },
+        "published_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        }
+      },
+      "required": [
+        "id",
+        "uri",
+        "locator",
+        "visibility",
+        "available",
+        "published_date"
+      ],
+      "additionalProperties": false
+    },
+    "fact": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "[A-Za-z0-9_.-]+",
+          "maxLength": 150
+        },
+        "metric": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "kind": {
+          "enum": [
+            "actual",
+            "guidance",
+            "estimate"
+          ]
+        },
+        "value": {
+          "type": [
+            "number",
+            "string",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "currency": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "[A-Z]{3}"
+        },
+        "period": {
+          "type": "object",
+          "properties": {
+            "start": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "date"
+            },
+            "end": {
+              "type": "string",
+              "format": "date"
+            },
+            "frequency": {
+              "enum": [
+                "multi_year",
+                "annual",
+                "interim",
+                "quarterly",
+                "instant"
+              ]
+            }
+          },
+          "required": [
+            "start",
+            "end",
+            "frequency"
+          ],
+          "additionalProperties": false
+        },
+        "periods_observed": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "start": {
+                "type": "string",
+                "format": "date"
+              },
+              "end": {
+                "type": "string",
+                "format": "date"
+              },
+              "frequency": {
+                "enum": [
+                  "annual",
+                  "interim",
+                  "quarterly",
+                  "instant"
+                ]
+              }
+            },
+            "required": [
+              "start",
+              "end",
+              "frequency"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "financial_definition": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            null,
+            "operating_ebit",
+            "effective_cash_tax_rate",
+            "noncash_da",
+            "capital_expenditure",
+            "change_in_operating_nwc",
+            "discount_rate",
+            "terminal_growth"
+          ]
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "published_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "vintage_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "evidence_kind": {
+          "enum": [
+            "reported",
+            "historical",
+            "historical_stress",
+            "hypothetical",
+            "calculation"
+          ]
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        }
+      },
+      "required": [
+        "id",
+        "metric",
+        "kind",
+        "value",
+        "unit",
+        "currency",
+        "period",
+        "periods_observed",
+        "financial_definition",
+        "observed_at",
+        "published_at",
+        "vintage_at",
+        "evidence_kind",
+        "source"
+      ],
+      "additionalProperties": false
+    },
+    "assumption": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "[A-Za-z0-9_.-]+",
+          "maxLength": 150
+        },
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "currency": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "[A-Z]{3}"
+        },
+        "scenario": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "author": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "rationale": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "supporting_fact_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "[A-Za-z0-9_.-]+",
+            "maxLength": 150
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "period": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "start": {
+              "type": "string",
+              "format": "date"
+            },
+            "end": {
+              "type": "string",
+              "format": "date"
+            },
+            "frequency": {
+              "enum": [
+                "annual",
+                "interim",
+                "quarterly",
+                "instant"
+              ]
+            }
+          },
+          "required": [
+            "start",
+            "end",
+            "frequency"
+          ],
+          "additionalProperties": false
+        },
+        "assumption_type": {
+          "enum": [
+            "forecast",
+            "carry_forward",
+            "parameter"
+          ]
+        },
+        "financial_definition": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            null,
+            "operating_ebit",
+            "effective_cash_tax_rate",
+            "noncash_da",
+            "capital_expenditure",
+            "change_in_operating_nwc",
+            "discount_rate",
+            "terminal_growth"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "value",
+        "unit",
+        "currency",
+        "scenario",
+        "author",
+        "rationale",
+        "supporting_fact_ids",
+        "period",
+        "assumption_type",
+        "financial_definition"
+      ],
+      "additionalProperties": false
+    },
+    "value_ref": {
+      "type": "object",
+      "properties": {
+        "fact_id": {
+          "type": "string",
+          "pattern": "[A-Za-z0-9_.-]+",
+          "maxLength": 150
+        },
+        "assumption_id": {
+          "type": "string",
+          "pattern": "[A-Za-z0-9_.-]+",
+          "maxLength": 150
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "anchor": {
+      "type": "object",
+      "properties": {
+        "level": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4
+        },
+        "status": {
+          "enum": [
+            "supported",
+            "refuted",
+            "unknown",
+            "contradicted"
+          ]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "[A-Za-z0-9_.-]+",
+            "maxLength": 150
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "counter_evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "[A-Za-z0-9_.-]+",
+            "maxLength": 150
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "rationale": {
+          "type": "string",
+          "maxLength": 30000
+        }
+      },
+      "required": [
+        "level",
+        "status",
+        "evidence_ids",
+        "counter_evidence_ids",
+        "rationale"
+      ],
+      "additionalProperties": false
+    },
+    "judgment": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "[A-Za-z0-9_.-]+",
+          "maxLength": 150
+        },
+        "judge": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "anchor_reviews": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/anchor"
+          },
+          "minItems": 5,
+          "maxItems": 5
+        }
+      },
+      "required": [
+        "id",
+        "judge",
+        "anchor_reviews"
+      ],
+      "additionalProperties": false
+    },
+    "contradiction": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "[A-Za-z0-9_.-]+",
+          "maxLength": 150
+        },
+        "fact_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "[A-Za-z0-9_.-]+",
+            "maxLength": 150
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "requirement_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "[A-Za-z0-9_.-]+",
+            "maxLength": 150
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "status": {
+          "enum": [
+            "unresolved",
+            "resolved"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "resolution_reason": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "resolution_fact_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "[A-Za-z0-9_.-]+",
+            "maxLength": 150
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        }
+      },
+      "required": [
+        "id",
+        "fact_ids",
+        "requirement_ids",
+        "status",
+        "reason",
+        "resolution_reason",
+        "resolution_fact_ids"
+      ],
+      "additionalProperties": false
+    },
+    "hard": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "enum": [
+            "PAYMENT_DEFAULT",
+            "UNFUNDED_OBLIGATIONS",
+            "FINANCIAL_INTEGRITY",
+            "MINORITY_RIGHTS_ABUSE",
+            "CORE_OPERATING_RIGHT_LOSS"
+          ]
+        },
+        "status": {
+          "enum": [
+            "confirmed",
+            "suspected",
+            "resolved"
+          ]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "[A-Za-z0-9_.-]+",
+            "maxLength": 150
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "affected_fact_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "[A-Za-z0-9_.-]+",
+            "maxLength": 150
+          },
+          "minItems": 0,
+          "maxItems": 1000
+        },
+        "rationale": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "resolution_condition": {
+          "type": "string",
+          "maxLength": 30000
+        }
+      },
+      "required": [
+        "code",
+        "status",
+        "evidence_ids",
+        "affected_fact_ids",
+        "rationale",
+        "resolution_condition"
+      ],
+      "additionalProperties": false
+    },
+    "falsifier": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "[A-Za-z0-9_.-]+",
+          "maxLength": 150
+        },
+        "metric": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "operator": {
+          "enum": [
+            "lt",
+            "le",
+            "gt",
+            "ge",
+            "eq",
+            "observed_event"
+          ]
+        },
+        "threshold": {
+          "type": [
+            "number",
+            "string",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "period": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "impact": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "status": {
+          "enum": [
+            "pending",
+            "triggered",
+            "not_triggered"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "metric",
+        "operator",
+        "threshold",
+        "unit",
+        "period",
+        "impact",
+        "status"
+      ],
+      "additionalProperties": false
+    },
+    "forecast": {
+      "type": "object",
+      "properties": {
+        "cashflow_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "period": {
+          "type": "object",
+          "properties": {
+            "start": {
+              "type": "string",
+              "format": "date"
+            },
+            "end": {
+              "type": "string",
+              "format": "date"
+            },
+            "frequency": {
+              "enum": [
+                "annual",
+                "interim",
+                "quarterly",
+                "instant"
+              ]
+            }
+          },
+          "required": [
+            "start",
+            "end",
+            "frequency"
+          ],
+          "additionalProperties": false
+        },
+        "ebit_ref": {
+          "$ref": "#/$defs/value_ref"
+        },
+        "tax_ref": {
+          "$ref": "#/$defs/value_ref"
+        },
+        "da_ref": {
+          "$ref": "#/$defs/value_ref"
+        },
+        "capex_ref": {
+          "$ref": "#/$defs/value_ref"
+        },
+        "nwc_change_ref": {
+          "$ref": "#/$defs/value_ref"
+        }
+      },
+      "required": [
+        "cashflow_date",
+        "period",
+        "ebit_ref",
+        "tax_ref",
+        "da_ref",
+        "capex_ref",
+        "nwc_change_ref"
+      ],
+      "additionalProperties": false
+    },
+    "scenario": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "enum": [
+            "bear",
+            "base",
+            "bull"
+          ]
+        },
+        "forecast": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/forecast"
+          },
+          "minItems": 0,
+          "maxItems": 30
+        },
+        "wacc_ref": {
+          "$ref": "#/$defs/value_ref"
+        },
+        "terminal_growth_ref": {
+          "$ref": "#/$defs/value_ref"
+        }
+      },
+      "required": [
+        "name",
+        "forecast",
+        "wacc_ref",
+        "terminal_growth_ref"
+      ],
+      "additionalProperties": false
+    },
+    "bridge": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "[A-Za-z0-9_.-]+",
+          "maxLength": 150
+        },
+        "role": {
+          "enum": [
+            "cash",
+            "non_operating_assets",
+            "gross_debt",
+            "lease_liabilities",
+            "preferred",
+            "noncontrolling_interest",
+            "other_claims"
+          ]
+        },
+        "amount_ref": {
+          "$ref": "#/$defs/value_ref"
+        },
+        "included_in": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "role",
+        "amount_ref",
+        "included_in"
+      ],
+      "additionalProperties": false
+    },
+    "security": {
+      "type": "object",
+      "properties": {
+        "listing_id": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "quote_currency": {
+          "type": "string",
+          "pattern": "[A-Z]{3}"
+        },
+        "quote_unit": {
+          "enum": [
+            "ADS",
+            "ordinary"
+          ]
+        },
+        "ordinary_shares_ref": {
+          "$ref": "#/$defs/value_ref"
+        },
+        "ordinary_per_quote_unit_ref": {
+          "$ref": "#/$defs/value_ref"
+        }
+      },
+      "required": [
+        "listing_id",
+        "quote_currency",
+        "quote_unit",
+        "ordinary_shares_ref",
+        "ordinary_per_quote_unit_ref"
+      ],
+      "additionalProperties": false
+    },
+    "valuation": {
+      "type": "object",
+      "properties": {
+        "currency": {
+          "type": "string",
+          "pattern": "[A-Z]{3}"
+        },
+        "scenarios": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/scenario"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "bridge": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/bridge"
+          },
+          "minItems": 0,
+          "maxItems": 7
+        },
+        "price_ref": {
+          "$ref": "#/$defs/value_ref"
+        },
+        "fx_ref": {
+          "$ref": "#/$defs/value_ref"
+        }
+      },
+      "required": [
+        "currency",
+        "scenarios",
+        "bridge",
+        "price_ref",
+        "fx_ref"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
